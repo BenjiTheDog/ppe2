@@ -55,7 +55,8 @@
 			echo "<tr><th>Nom</th><th>Prénom</th><th>Âge</th></tr>";
 
 			while ($ligne = mysqli_fetch_assoc($resultat)) {
-				echo "<tr><td>" . $ligne["nom"] . "</td><td>" . $ligne["prenom"] . "</td><td>" . $ligne["age"] . "</td></tr>";
+				echo "<tr><td>" . $ligne["carburant"] . "</td><td>" . $ligne["etat"] . "</td><td>" . $ligne["marque"] . "</td></tr>". $ligne["typevehicule"] . 
+                "</td></tr>". $ligne["utilisateur"] . "</td></tr>" . $ligne["vehicule"] . "</td></tr>";
 			}
 
 			echo "</table>";
