@@ -80,14 +80,14 @@ button {
     color: orange;
 }
 .imgpub{
-    margin-left: 660px;
-    width : 1000px;
-    height : 175px;
+    margin-left: 27%;
+    width : 45%;
+    height : 45%;
 }
 .imggarage{
-    margin-top: -30px;
-    width : 2300px;
-    height : 900px;
+    margin-top: -1%;
+    width : 100%;
+    height : 50%;
 }
 
 .link{
@@ -95,13 +95,13 @@ button {
         color: white; /*par exemple*/
 }
 .txtroy{
-    margin: -765px auto;
-    padding-left: 800px;
+    margin: -32% auto;
+    padding-left: 34%;
 }
 .cntct{
-    margin-top: 800px;
-    padding-right: 1000px;
+    margin-top: 34%;
+    padding-right: 80%;
 }
 .barre{
-    font-size: 2px;
+    font-size: 2%;
 }
