@@ -26,7 +26,7 @@ body {
 		<tr>
 			<td width="15%" valign="top">
 				<ul>
-					<li><a href="index.php"><font color=orange>Accueil</font></a></li>
+					<li><a href="Accueil.html"><font color=orange>Accueil</font></a></li>
 				</ul>
 			</td>
 			<td>
