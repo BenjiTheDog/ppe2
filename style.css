@@ -95,12 +95,14 @@ button {
         color: white; /*par exemple*/
 }
 .txtroy{
-    margin: -32% auto;
-    padding-left: 34%;
+    margin: -40% auto;
+    padding-left: 44%;
+    margin-top: -42%;
 }
 .cntct{
-    margin-top: 34%;
+    margin-top: 37%;
     padding-right: 80%;
+
 }
 .barre{
     font-size: 2%;
@@ -132,7 +134,7 @@ li{
     margin:5px;
 }
 li:hover{
-    background-color: cornflowerblue    ;
+    background-color: rgb(237, 159, 100)    ;
     color:white
 }
 
@@ -145,14 +147,14 @@ li a:link, li a:visited {
 }
 
 a{
-    color: cornflowerblue;
+    color: rgb(237, 159, 100);
 }
 a:hover{
     text-decoration: underline overline;
 }
 
 #img1{
-    border:2px solid cornflowerblue;
+    border:2px solid rgb(237, 159, 100);
     margin-top:15px;
 }
 
