@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<title> Garage Roy</title>
+	<title>GarageRoy - CGU</title>
+	<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@ body {
 <body> 
 	<table border="1" width="100%" height="700">
 		<tr>
-			<td colspan="2" align="center"><img src="Logo.jpg" width="150">
+			<td colspan="2" align="center"><img src="Logo.png" width="150">
 				<br />
 			</td>
 		</tr>
