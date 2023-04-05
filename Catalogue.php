@@ -34,7 +34,7 @@
 		$serveur = "localhost";
 		$utilisateur = "root";
 		$mdp = "";
-		$bdd = "garageroy";
+		$bdd = "GarageRoy";
 
 		$connexion = mysqli_connect($serveur, $utilisateur, $mdp, $bdd);
 
