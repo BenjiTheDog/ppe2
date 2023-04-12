@@ -274,3 +274,8 @@ b::selection {
 center::selection {
     background: #bf8b42;
   }
+.formulaire {
+    background: #bf8b42;
+    color: #fff;
+    border-style: double; 
+}
