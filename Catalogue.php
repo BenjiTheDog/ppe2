@@ -22,11 +22,16 @@
 	<form action="tri.php" method="post">
 		<label for="tri">Trier par:</label>
 		<select name="tri" id="tri">
-			<option value="carburant">carburant</option>
+			<option value="carburant">Carburant</option>
 			<option value="etat">Etat</option>
+            <option value="marque">Marque</option>
 			<option value="typevehicule">Type de véhicule</option>
             <option value="vehicule">Vehicule</option>
 		</select>
+        <div class="arrow-container">
+            <i class="arrow up"></i>
+            <i class="arrow down"></i>
+        </div>
 		<input type="submit" value="Trier">
 	</form>
     </body>

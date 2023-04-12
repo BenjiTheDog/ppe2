@@ -21,7 +21,7 @@
 		// Affichage des résultats
 		if (mysqli_num_rows($resultat) > 0) {
 			echo "<table>";
-			echo "<tr><th>Nom</th><th>Prénom</th><th>Âge</th></tr>";
+			echo "<tr><th>carburant</th><th>etat</th><th>marque</th></tr><th>typevehicule</th><th>vehicule</th>";
 
 			while ($ligne = mysqli_fetch_assoc($resultat)) {
 				echo "<tr><td>" . $ligne["carburant"] . "</td><td>" . $ligne["etat"] . "</td><td>" . $ligne["marque"] . "</td></tr>". $ligne["typevehicule"] . "</td></tr>" . $ligne["vehicule"] . "</td></tr>";
