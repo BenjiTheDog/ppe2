@@ -173,4 +173,6 @@ $Motif = array(
 
     </script>
         </div>
+        <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
     </body>
+</html>
