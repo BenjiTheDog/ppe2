@@ -274,6 +274,7 @@ b::selection {
 center::selection {
     background: #bf8b42;
   }
+<<<<<<< HEAD
 
 .actubenjamin{
   width: 40%;
@@ -288,4 +289,10 @@ center::selection {
 .actuugotxt{
   margin-top: -27%;
   margin-left: 41%;
+=======
+.formulaire {
+    background: #bf8b42;
+    color: #fff;
+    border-style: double; 
+>>>>>>> afd7368a76aa185407187aaf614560551a415a07
 }

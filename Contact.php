@@ -28,7 +28,7 @@
         </H1>
         <div class="cntct">
         </br></br></br>
-            <H1><center>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</center></H1>
+            <H1><center>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</center></H1>
             <H1>Contacter J. Roy : </H1>
 </br>
             <?
@@ -108,7 +108,7 @@ $Motif = array(
                                         <textarea id="message" name="message" rows="4" cols="50"></textarea><span
                                             id="msgmessage"></span><br><br>
                                     </fieldset>
-                                    <input type="submit" value="Envoyer"><input type="reset" value="Annuler" />
+                                    <input class="Formulaire" type="submit" value="Envoyer"><input type="reset" value="Annuler" />
                                 </fieldset>
                             </form>
                         </td>
@@ -170,9 +170,7 @@ $Motif = array(
                 return false;
             }
         }
-
     </script>
         </div>
-        <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
     </body>
 </html>
