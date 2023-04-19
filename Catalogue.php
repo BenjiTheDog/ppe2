@@ -110,8 +110,8 @@
         $mysqlConnection = null;
     }
     ?>
-    <table>
-        <tr>
+    <table class="TCata">
+        <tr >
             
             <td>Modele</td>
             <td>Kilometrage</td>
