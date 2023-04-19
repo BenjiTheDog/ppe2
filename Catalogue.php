@@ -26,20 +26,22 @@
             <center>‾‾‾‾‾‾‾‾‾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </H3>
     </header>
-    <h1>Résultats de la recherche</h1>
-
-<<<<<<< HEAD
+    <h1>Recherche avancée</h1>
 		<form>
   <label for="marque">Marque :</label>
-  <input type="text" id="marque" name="marque"><br><br>
+  <select id="marque" name="marque">
     <option value="neuf">Renault</option>
     <option value="occasion">BMW</option>
+</select><br></br>
 
   <label for="modele">Modèle :</label>
-  <input type="text" id="modele" name="modele"><br><br>
+  <select id="modele" name="modele">
+    <option value="neuf">Tesla modèle X</option>
+    <option value="occasion">Renault Alpine</option>
+	</select><br></br>
 
   <label for="cv">CV :</label>
-  <input type="number" id="cv" name="cv"><br><br>
+  <input type="number" id="cv" name="cv">
 
   <label for="prix_max">Prix maximum :</label>
   <input type="number" id="prix_max" name="prix_max"><br><br>
@@ -111,8 +113,7 @@
     }
     ?>
     <table>
-        <tr>
-            
+        <tr>           
             <td>Modele</td>
             <td>Kilometrage</td>
             <td>chevaux</td>
@@ -147,12 +148,8 @@
         ?>
     </table>
 </body>
-
-=======
->>>>>>> d39e86ec170b46dcdb3756729de36a82f8986fb9
 	<form action="tri.php" method="post">
 		<select name="tri" id="tri">
-<<<<<<< HEAD
 			<option value="carburant">carburant</option>
 			<option value="etat">Etat</option>
             <option value="modele">Modèle</option>
@@ -161,13 +158,6 @@
 			<option value="marque">Marque</option>
 			<option value="cv">CV</option>
 			<option value="annee">Année/option>
-=======
-			<option name="carburant" value="carburant">Carburant</option>
-			<option name="etat" value="etat">Etat</option>
-            <option name="marque" value="marque">Marque</option>
-			<option name="typevehicule" value="typevehicule">Type de véhicule</option>
-            <option name="vehicule" value="vehicule">Vehicule</option>
->>>>>>> d39e86ec170b46dcdb3756729de36a82f8986fb9
 		</select>
         <div class="arrow-container">
             <i class="arrow up"></i>
@@ -175,7 +165,6 @@
         </div>
 		<input type="submit" value="Trier">
 	</form>
-    <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
+    <h3><center><a href="cgu.php"><font color=white>Conditions générales d'utilisations</font></center></a></h3>
     </body>
->>>>>>> 3ab37dba0202ae2d83a8eccbf6cb70aac5e8065d
 </html>

@@ -128,33 +128,30 @@ link::selection {
     background: #bf8b42;
   }
 .txtroy{
-    margin: -40% auto;
-    padding-left: 44%;
-    margin-top: -42%;
+    margin: -32% auto;
+    padding-left: 34%;
 }
-.txtroy::selection {
-    background: #bf8b42;
-  }
 .cntct{
-    margin-top: 37%;
+    margin-top: 34%;
     padding-right: 80%;
-
 }
-.cntct::selection {
-    background: #bf8b42;
-  }
 .barre{
     font-size: 2%;
 }
 .logobar{
     padding-left: 25%;
 }
-input{
-    color:white;
-}
-input::selection {
-    background: #bf8b42;
-  }
+
+
+
+
+
+
+
+/*CNTCT*/
+
+
+
 ul{
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
@@ -174,7 +171,7 @@ li::selection {
     background: #bf8b42;
   }
 li:hover{
-    background-color: rgb(237, 159, 100)    ;
+    background-color: cornflowerblue    ;
     color:white
 }
 
@@ -190,17 +187,14 @@ li a:link, li a:visited {
 }
 
 a{
-    color: rgb(237, 159, 100);
+    color: cornflowerblue;
 }
-a::selection {
-    background: #bf8b42;
-  }
 a:hover{
     text-decoration: underline overline;
 }
 
 #img1{
-    border:2px solid rgb(237, 159, 100);
+    border:2px solid cornflowerblue;
     margin-top:15px;
 }
 
@@ -221,82 +215,11 @@ table::selection {
 .contact{
     width:500px;
 }
-.contact::selection {
-    background: #bf8b42;
-  }
 
-.tri-horizontal {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #333;
+.marque{
+    margin-left: 50px;
 }
-  
-.tri-horizontal select {
-    border: none;
-    background-color: transparent;
-    font-size: inherit;
-    margin-right: 10px;
-}
-  
-.arrow-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-}
-  
-.arrow {
-    display: block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 6px 5px 0 5px;
-    border-color: #aaa transparent transparent transparent;
-    cursor: pointer;
-}
-  
-.up {
-    margin-bottom: 4px;
-}
-  
-.down {
-    margin-top: 4px;
-}
-br::selection {
-    background: #bf8b42;
-  }
-u::selection {
-    background: #bf8b42;
-  }
-b::selection {
-    background: #bf8b42;
-  }
-center::selection {
-    background: #bf8b42;
-  }
 
-.actubenjamin{
-  width: 40%;
-}
-.actubenjamintxt{
-  margin-top: -26.5%;
-  margin-left: 41%;
-}
-.actuugo{
-  width: 40%;
-  margin-left: 60%;
-}
-.actuugotxt{
-  margin-top: -27%;
-<<<<<<< HEAD
-  margin-right: 40%;
-=======
-=======
-  margin-left: 41%;
-}
->>>>>>> f6fed2756f3e195665dd5a21bc1ac634dd467557
-.formulaire {
-    background: #bf8b42;
-    color: #fff;
-    border-style: double; 
+#modele{
+    float: left;
 }
