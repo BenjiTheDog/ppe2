@@ -42,7 +42,7 @@ body {
 					numéro 451 432 228, dont le siège social est localisé au 3 Rue Docteur Joubert, 59110, La Madeleine,
 					France Métropolitaine. L’hébergeur du site Garage Roy.fr est la société LHW, sise au 5 Rue Keller,
 					59100 Roubaix, France.</p>
-					<body style="color">
+					<body style="color:ffffff">
 
 				<h2 style="color:#ffffff";>Article 3 : Accès au site</h2>
 </body>

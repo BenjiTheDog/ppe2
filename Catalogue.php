@@ -28,6 +28,7 @@
     </header>
     <h1>Résultats de la recherche</h1>
 
+<<<<<<< HEAD
     <form action="tri.php" method="post">
         <label for="tri">Trier par:</label>
         <select name="tri" id="tri">
@@ -104,4 +105,23 @@
     </table>
 </body>
 
+=======
+	<form action="tri.php" method="post">
+		<label for="tri">Trier par:</label>
+		<select name="tri" id="tri">
+			<option name="carburant" value="carburant">Carburant</option>
+			<option name="etat" value="etat">Etat</option>
+            <option name="marque" value="marque">Marque</option>
+			<option name="typevehicule" value="typevehicule">Type de véhicule</option>
+            <option name="vehicule" value="vehicule">Vehicule</option>
+		</select>
+        <div class="arrow-container">
+            <i class="arrow up"></i>
+            <i class="arrow down"></i>
+        </div>
+		<input type="submit" value="Trier">
+	</form>
+    <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
+    </body>
+>>>>>>> 3ab37dba0202ae2d83a8eccbf6cb70aac5e8065d
 </html>
