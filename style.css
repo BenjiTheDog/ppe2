@@ -141,6 +141,7 @@ link::selection {
 .logobar{
     padding-left: 25%;
 }
+<<<<<<< HEAD
 
 
 
@@ -152,6 +153,14 @@ link::selection {
 
 
 
+=======
+input{
+    color:rgb(122, 122, 122);
+}
+input::selection {
+    background: #bf8b42;
+  }
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 ul{
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
@@ -220,6 +229,57 @@ table::selection {
     margin-left: 50px;
 }
 
+<<<<<<< HEAD
 #modele{
     float: left;
+=======
+.actubenjamin{
+  width: 40%;
+}
+.actubenjamintxt{
+  margin-top: -26.5%;
+  margin-left: 41%;
+}
+.actuugo{
+  width: 40%;
+  margin-left: 60%;
+}
+.actuugotxt{
+  margin-top: -27%;
+  margin-right: 41%;
+}
+.acturemi{
+  width: 40%;
+}
+.acturemitxt{
+  margin-top: -26.5%;
+  margin-left: 41%;
+}
+.actumael{
+  width: 40%;
+  margin-left: 60%;
+  margin-bottom: 5%;
+}
+.actumaeltxt{
+  margin-top: -27%;
+  margin-right: 41%;
+}
+.formulaire {
+    background: #bf8b42;
+    color: #fff;
+    border-style: double; 
+}
+
+.TCata {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+tr:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 }
