@@ -19,14 +19,57 @@
         </header>
         <h1>Résultats de la recherche</h1>
 
+		<form>
+  <label for="marque">Marque :</label>
+  <input type="text" id="marque" name="marque"><br><br>
+    <option value="neuf">Renault</option>
+    <option value="occasion">BMW</option>
+
+  <label for="modele">Modèle :</label>
+  <input type="text" id="modele" name="modele"><br><br>
+
+  <label for="cv">CV :</label>
+  <input type="number" id="cv" name="cv"><br><br>
+
+  <label for="prix_max">Prix maximum :</label>
+  <input type="number" id="prix_max" name="prix_max"><br><br>
+
+  <label for="prix_min">Prix minimum :</label>
+  <input type="number" id="prix_min" name="prix_min"><br><br>
+
+  <label for="etat">État :</label>
+  <select id="etat" name="etat">
+    <option value="neuf">Neuf</option>
+    <option value="occasion">Occasion</option>
+  </select><br><br>
+
+  <label for="carburant">Carburant :</label>
+  <select id="carburant" name="carburant">
+    <option value="essence">Essence</option>
+    <option value="diesel">Diesel</option>
+    <option value="hybride">Hybride</option>
+    <option value="electrique">Électrique</option>
+  </select><br><br>
+
+  <label for="kilometrage">Kilométrage :</label>
+  <input type="number" id="kilometrage" name="kilometrage"><br><br>
+
+  <label for="annee">Année :</label>
+  <input type="number" id="annee" name="annee"><br><br>
+
+  <input type="submit" value="Envoyer">
+</form>
+
 	<form action="tri.php" method="post">
-		<label for="tri">Trier par:</label>
 		<select name="tri" id="tri">
 			<option value="carburant">carburant</option>
 			<option value="etat">Etat</option>
-			<option value="typevehicule">Type de véhicule</option>
-            <option value="utilisateur">Utilisateur</option>
-            <option value="vehicule">Vehicule</option>
+            <option value="modele">Modèle</option>
+			<option value="prixmaximum">Prix maximum</option>
+			<option value="prixminimum">Prix minimum</option>
+			<option value="marque">Marque</option>
+			<option value="cv">CV</option>
+			<option value="annee">Année/option>
 		</select>
 		<input type="submit" value="Trier">
 	</form>
