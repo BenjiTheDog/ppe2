@@ -64,6 +64,4 @@
 
 		// Fermeture de la connexion à la base de données
 		mysqli_close($connexion);
-	?>
-
-	//"</td><td>" . $ligne["etat"] . "</td><td>" . $ligne["marque"] . "</td></tr>". $ligne["typevehicule"] . "</td></tr>" . $ligne["vehicule"] . "</td></tr>";
+?>
