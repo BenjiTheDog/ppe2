@@ -28,7 +28,7 @@
     </header>
     <h1>Résultats de la recherche</h1>
 
-<<<<<<< HEAD
+
 		<form>
   <label for="marque">Marque :</label>
   <input type="text" id="marque" name="marque"><br><br>
@@ -70,8 +70,7 @@
   <input type="submit" value="Envoyer">
 </form>
 
-=======
-<<<<<<< HEAD
+
     <form action="tri.php" method="post">
         <label for="tri">Trier par:</label>
         <select name="tri" id="tri">
@@ -101,6 +100,7 @@
         //Exécution sur le serveur de BDD
        $statment->execute();
        $vehicules = $statment->fetchAll();
+       
     } catch (PDOException $error) {
         echo 'Échec de la connexion : ' . $error->getMessage();
     } finally {
@@ -134,25 +134,23 @@
                 <td><?php echo $vehicule['chevaux']; ?></td>
                 <td><?php echo $vehicule['Annee']; ?></td>
                 <td><?php echo $vehicule['Prix']; ?></td>
-                <td><?php echo $vehicule['Image']; ?></td>
+                <td><img width="150" src=".<?php echo $vehicule['Image']; ?>" /></td>
                 <td><?php echo $vehicule['PrixP']; ?></td>
-                <td><?php echo $vehicule['LC']; ?></td>
+                <td><?php echo utf8_encode($vehicule['LC']); ?></td>
                 <td><?php echo $vehicule['LM']; ?></td>
-                <td><?php echo $vehicule['LT']; ?></td>
-                <td><?php echo $vehicule['LE']; ?></td>
+                <td><?php echo utf8_encode($vehicule['LT']); ?></td>
+                <td><?php echo utf8_encode($vehicule['LE']); ?></td>
             </tr>
         <?
         } //fin de la boucle, le tableau contient toute la BDD
         
         ?>
     </table>
-</body>
 
-=======
->>>>>>> d39e86ec170b46dcdb3756729de36a82f8986fb9
+
 	<form action="tri.php" method="post">
 		<select name="tri" id="tri">
-<<<<<<< HEAD
+
 			<option value="carburant">carburant</option>
 			<option value="etat">Etat</option>
             <option value="modele">Modèle</option>
@@ -161,13 +159,7 @@
 			<option value="marque">Marque</option>
 			<option value="cv">CV</option>
 			<option value="annee">Année/option>
-=======
-			<option name="carburant" value="carburant">Carburant</option>
-			<option name="etat" value="etat">Etat</option>
-            <option name="marque" value="marque">Marque</option>
-			<option name="typevehicule" value="typevehicule">Type de véhicule</option>
-            <option name="vehicule" value="vehicule">Vehicule</option>
->>>>>>> d39e86ec170b46dcdb3756729de36a82f8986fb9
+
 		</select>
         <div class="arrow-container">
             <i class="arrow up"></i>
@@ -177,5 +169,4 @@
 	</form>
     <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
     </body>
->>>>>>> 3ab37dba0202ae2d83a8eccbf6cb70aac5e8065d
 </html>
