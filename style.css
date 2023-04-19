@@ -229,10 +229,9 @@ table::selection {
     margin-left: 50px;
 }
 
-<<<<<<< HEAD
 #modele{
     float: left;
-=======
+}
 .actubenjamin{
   width: 40%;
 }
@@ -281,5 +280,4 @@ td:not(:last-child) {
 }
 tr:not(:last-child) {
   border-bottom: 1px solid #ddd;
->>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 }
