@@ -119,7 +119,7 @@ a {
 <body>
 
 
-<form action="" method="POST">
+<form id="register-form" action="" method="POST">
     <h1>Inscription</h1>
 
     <label><b>Nom d'utilisateur</b></label>
@@ -131,5 +131,15 @@ a {
     <input type="submit" id='submit' name='register' value="S'inscrire" >
     <button class="btn" type="button" onclick="window.location.href='login.php'">Se connecter</button>
 </form>
+<script>
+    document.getElementById("register-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche le formulaire de se soumettre
+        // Afficher une pop-up avec un message de succès
+        alert("Inscription réussie !");
+        // Rediriger l'utilisateur vers la page de connexion
+        window.location.href = "login.php";
+    });
+</script>
+
 </body>
 </html>
