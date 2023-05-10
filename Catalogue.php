@@ -181,24 +181,7 @@
 
         ?>
     </table>
-
-    <form action="tri.php" method="post">
-        <select name="tri" id="tri">
-            <option value="carburant">carburant</option>
-            <option value="etat">Etat</option>
-            <option value="modele">Modèle</option>
-            <option value="prixmaximum">Prix maximum</option>
-            <option value="prixminimum">Prix minimum</option>
-            <option value="marque">Marque</option>
-            <option value="cv">CV</option>
-            <option value="annee">Année/option>
-        </select>
-        <div class="arrow-container">
-            <i class="arrow up"></i>
-            <i class="arrow down"></i>
-        </div>
-        <input type="submit" value="Trier">
-    </form>
+    <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
 </body>
 
 </html>
