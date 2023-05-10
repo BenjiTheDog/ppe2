@@ -1,14 +1,7 @@
 <html>
-<<<<<<< HEAD
-<head>
-    <meta charset="utf-8">
-    <!-- importer le fichier de style -->
-
-</head>
-=======
  <head>
  <meta charset="utf-8">
- <style>
+<style>
     body{
  background: #67BE4B;
 }
@@ -30,7 +23,6 @@ form {
  margin: 0 auto;
  padding-bottom: 10px;
 }
->>>>>>> e67478843ca9964fc6d746839173b8dff5d61438
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
@@ -57,7 +49,7 @@ input[type=submit]:hover {
  color: #53af57;
  border: 1px solid #53af57;
 }
- </style>
+</style>
  </head>
  <body>
  <div id="container">
