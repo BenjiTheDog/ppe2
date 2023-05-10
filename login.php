@@ -3,7 +3,7 @@
  <head>
  <meta charset="utf-8">
 <style>
-    body{
+body{
  background: #67BE4B;
 }
 #container{
@@ -81,7 +81,8 @@ input[type=submit]:hover {
  <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
  <input type="submit" id='submit' value='Se connecter' >
- <button class="btn" onclick="window.location.href='inscription.php'">S'inscrire</button>
+ <button class="btn" type="button" onclick="window.location.href='inscription.php'">S'inscrire</button>
+
  <?php
  if(isset($_GET['erreur'])){
  $err = $_GET['erreur'];
