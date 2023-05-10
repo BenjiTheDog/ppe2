@@ -60,7 +60,7 @@ mysqli_close($conn);
 	<h2>Inscription</h2>
 	<form class="formulaire" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<label for="username">Nom d'utilisateur :</label>
-		<input type="text" name="username" id="username" required>
+		<input type="text" name="username" id="username" required></br>
 		<label for="password">Mot de passe :</label>
 		<input type="password" name="password" id="password" required>
 		<input type="submit" name="submit" value="S'inscrire">
