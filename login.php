@@ -1,5 +1,4 @@
 <html>
-<<<<<<< HEAD
  <head>
  <meta charset="utf-8">
  <!-- importer le fichier de style -->
@@ -30,7 +29,6 @@
  </div>
  </body>
 </html>
-=======
 
 <head>
     <meta charset="utf-8">
@@ -64,4 +62,3 @@
 </body>
 
 </html>
->>>>>>> d68e8572e3c825b25dcf4522803e2a86ebb4b727
