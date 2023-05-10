@@ -269,3 +269,15 @@ table::selection {
     color: #fff;
     border-style: double; 
 }
+.TCata {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+tr:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
