@@ -78,18 +78,6 @@
   <input type="submit" value="Envoyer">
 </form>
 
-
-    <form action="tri.php" method="post">
-        <label for="tri">Trier par:</label>
-        <select name="tri" id="tri">
-            <option value="carburant">carburant</option>
-            <option value="etat">Etat</option>
-            <option value="typevehicule">Type de véhicule</option>
-            <option value="vehicule">Vehicule</option>
-        </select>
-        <input type="submit" value="Trier">
-    </form>
-
     <?
     $hostname = "localhost";
     $user = "root";
