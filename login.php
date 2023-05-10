@@ -66,7 +66,7 @@ input[type=submit]:hover {
  <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
  <input type="submit" id='submit' value='Se connecter' >
- <input type="submit" name="submit" value="S'inscrire" formaction="inscription.php" >
+ <button onclick="window.location.href='inscription.php'">Aller à la page d'inscription</button>
  <?php
  if(isset($_GET['erreur'])){
  $err = $_GET['erreur'];
@@ -74,7 +74,7 @@ input[type=submit]:hover {
  echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
  }
  ?>
- <input type="submit" name="submit" value="S'inscrire" formaction="inscription.php" >
+ 
  </form>
  </div>
 
