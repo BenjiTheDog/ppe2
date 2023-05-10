@@ -20,7 +20,7 @@
         $sqlQuery = "SELECT Modele FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $modele = $statment->fetchAll();
+        $modeles = $statment->fetchAll();
         $sqlQuery = "SELECT Libelle FROM marque";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
@@ -99,7 +99,9 @@
 
         <label for="modele">Modèle :</label>
         <select id="modele" name="modele">
-                <? foreach ($modeles as $modele) 
+                <? foreach ($modeles as $modele) { ?>
+                    <option value="<?=$modele["Modele"]?>"<?=$modele["Modele"]?></option>
+                <?}?> 
         </select><br></br>
         </select><br></br>
 
