@@ -281,3 +281,6 @@ td:not(:last-child) {
 tr:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
+.olink{
+  text-decoration: none;
+  color: #bf8b42;; /*par exemple*/
