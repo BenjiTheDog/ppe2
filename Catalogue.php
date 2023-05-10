@@ -41,14 +41,14 @@
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $prix = $statment->fetchAll();
-        $sqlQuery = "SELECT DISTINCT Kilometrage FROM vehicule";
+        $sqlQuery = "SELECT DISTINCT Kilometrage FROM vehicule ORDER BY Kilometrage ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $kilometrages = $statment->fetchAll();
-        $sqlQuery = "SELECT Annee FROM vehicule";
+        $sqlQuery = "SELECT Annee FROM vehicule ORDER BY Annee ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $annee = $statment->fetchAll();
+        $annees = $statment->fetchAll();
     } catch (PDOException $error) {
         echo 'Échec de la connexion : ' . $error->getMessage();
     } finally {
@@ -136,10 +136,13 @@
         <? foreach ($kilometrages as $kilometrage) { ?>
                 <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?></option>
         <?}?>
-        <label for="annee">Année :</label>
         </select><br><br>
-
-        <input type="number" id="annee" name="annee" value=1950><br><br>
+        <label for="annee">Année :</label>
+        <select id="Annee" name="Annee">
+            <? foreach ($annees as $annee) { ?>
+                <option value="<?=$annee["Annee"]?>"><?=$annee["Annee"]?></option>
+            <?}?>
+        </select><br><br>
 
         <input type="submit" value="Envoyer">
     </form>
