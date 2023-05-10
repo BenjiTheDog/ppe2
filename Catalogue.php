@@ -64,7 +64,6 @@
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-
 </head>
 
 <body>
