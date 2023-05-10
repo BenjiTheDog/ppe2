@@ -26,13 +26,7 @@
             <center>‾‾‾‾‾‾‾‾‾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </H3>
     </header>
-<<<<<<< HEAD
     <h1>Recherche avancée</h1>
-=======
-    <h1>Résultats de la recherche</h1>
-
-
->>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 		<form>
   <label for="marque">Marque :</label>
   <select id="marque" name="marque">
@@ -79,22 +73,14 @@
 </form>
 
 
-    <form action="tri.php" method="post">
-        <label for="tri">Trier par:</label>
-        <select name="tri" id="tri">
-            <option value="carburant">carburant</option>
-            <option value="etat">Etat</option>
-            <option value="typevehicule">Type de véhicule</option>
-            <option value="vehicule">Vehicule</option>
-        </select>
-        <input type="submit" value="Trier">
-    </form>
+    
 
     <?
     $hostname = "localhost";
     $user = "root";
     $pwd = "";
     $database = "vehiculeroy";
+    $vehicules = null;
 
     try {
         $mysqlConnection = new PDO(
@@ -118,14 +104,8 @@
         $mysqlConnection = null;
     }
     ?>
-<<<<<<< HEAD
     <table>
         <tr>           
-=======
-    <table class="TCata">
-        <tr >
-            
->>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
             <td>Modele</td>
             <td>Kilometrage</td>
             <td>chevaux</td>
@@ -159,17 +139,9 @@
         
         ?>
     </table>
-<<<<<<< HEAD
 </body>
 	<form action="tri.php" method="post">
 		<select name="tri" id="tri">
-=======
-
-
-	<form action="tri.php" method="post">
-		<select name="tri" id="tri">
-
->>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 			<option value="carburant">carburant</option>
 			<option value="etat">Etat</option>
             <option value="modele">Modèle</option>
@@ -178,10 +150,6 @@
 			<option value="marque">Marque</option>
 			<option value="cv">CV</option>
 			<option value="annee">Année/option>
-<<<<<<< HEAD
-=======
-
->>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 		</select>
         <div class="arrow-container">
             <i class="arrow up"></i>
