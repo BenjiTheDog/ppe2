@@ -26,9 +26,13 @@
             <center>‾‾‾‾‾‾‾‾‾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </H3>
     </header>
+<<<<<<< HEAD
+    <h1>Recherche avancée</h1>
+=======
     <h1>Résultats de la recherche</h1>
 
 
+<<<<<<< HEAD
 	
     <?
     $hostname = "localhost";
@@ -59,6 +63,10 @@
     }
     ?>
     <form class="FromCata">
+=======
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
+		<form>
+>>>>>>> 2824599cf0f33154b7b017a6f7b750025b5a1c72
   <label for="marque">Marque :</label>
   <select id="marque" name="marque">
     <option value="neuf">Renault</option>
@@ -69,7 +77,11 @@
   <select id="modele" name="modele">
     <option value="neuf">Tesla modèle X</option>
     <option value="occasion">Renault Alpine</option>
+<<<<<<< HEAD
     </select><br></br>
+=======
+	</select><br></br>
+>>>>>>> 2824599cf0f33154b7b017a6f7b750025b5a1c72
 
   <label for="cv">CV :</label>
   <input type="number" id="cv" name="cv">
@@ -102,9 +114,46 @@
 
   <input type="submit" value="Envoyer">
 </form>
+<<<<<<< HEAD
+=======
+
+    <?
+    $hostname = "localhost";
+    $user = "root";
+    $pwd = "";
+    $database = "vehiculeroy";
+
+    try {
+        $mysqlConnection = new PDO(
+            'mysql:host=' . $hostname . ';dbname=' . $database,
+            $user,
+            $pwd
+        );
+        echo "Connexion réussie<br/>";
+        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        //Exécution sur le serveur de BDD
+       $statment->execute();
+       $vehicules = $statment->fetchAll();
+       
+    } catch (PDOException $error) {
+        echo 'Échec de la connexion : ' . $error->getMessage();
+    } finally {
+
+
+
+        $mysqlConnection = null;
+    }
+    ?>
+<<<<<<< HEAD
+    <table>
+        <tr>           
+=======
+>>>>>>> 2824599cf0f33154b7b017a6f7b750025b5a1c72
     <table class="TCata">
         <tr class="trli" >
             
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
             <td>Modele</td>
             <td>Kilometrage</td>
             <td>chevaux</td>
@@ -138,11 +187,17 @@
         
         ?>
     </table>
+<<<<<<< HEAD
+</body>
+	<form action="tri.php" method="post">
+		<select name="tri" id="tri">
+=======
 
 
 	<form action="tri.php" method="post">
 		<select name="tri" id="tri">
 
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 			<option value="carburant">carburant</option>
 			<option value="etat">Etat</option>
             <option value="modele">Modèle</option>
@@ -151,7 +206,10 @@
 			<option value="marque">Marque</option>
 			<option value="cv">CV</option>
 			<option value="annee">Année/option>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 70afa7a131e8c3b2c5ed229413ad634a912daca3
 		</select>
         <div class="arrow-container">
             <i class="arrow up"></i>
@@ -159,6 +217,6 @@
         </div>
 		<input type="submit" value="Trier">
 	</form>
-    <h3><center><a href="cgu.php"><font color=white>Condition générale d'utilisation</font></center></a></h3>
+    <h3><center><a href="cgu.php"><font color=white>Conditions générales d'utilisations</font></center></a></h3>
     </body>
 </html>
