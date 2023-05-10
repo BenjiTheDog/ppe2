@@ -92,14 +92,14 @@
         <label for="marque"></label>
         <select id="marque" name="marque">
             <? foreach ($marques as $marque) { ?>
-                <option value="<?=$marque["Libelle"]?>"><?=$marque["Libelle"]?></option>
+                <option value="<?=utf8_encode($marque["Libelle"])?>"><?=utf8_encode($marque["Libelle"])?></option>
             <?}?>
         </select><br></br>
 
         <label for="modele"></label>
         <select id="modele" name="modele">
             <? foreach ($modeles as $modele) { ?>
-                <option value="<?=$modele["Modele"]?>"><?=$modele["Modele"]?></option>
+                <option value="<?=utf8_encode($modele["Modele"])?>"><?=utf8_encode($modele["Modele"])?></option>
             <?}?> 
         </select><br></br>
         </select><br></br>
@@ -119,14 +119,14 @@
         <label for="etat"></label>
         <select id="etat" name="etat">
             <? foreach ($etats as $etat) { ?>
-                <option value="<?=$etat["Libelle"]?>"><?=$etat["Libelle"]?></option>
+                <option value="<?=utf8_encode($etat["Libelle"])?>"><?=utf8_encode($etat["Libelle"])?></option>
             <?}?>
         </select><br><br>
 
         <label for="carburant"></label>
         <select id="carburant" name="carburant">
         <? foreach ($carburants as $carburant) { ?>
-                <option value="<?=$carburant["Libelle"]?>"><?=$carburant["Libelle"]?></option>
+                <option value="<?=utf8_encode($carburant["Libelle"])?>"><?=utf8_encode($carburant["Libelle"])?></option>
         <?}?>
         </select><br><br>
 
