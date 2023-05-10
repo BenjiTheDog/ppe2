@@ -90,14 +90,14 @@
    
     <form class="FromCata">
 
-        <label for="marque">Marque :</label>
+        <label for="marque"></label>
         <select id="marque" name="marque">
             <? foreach ($marques as $marque) { ?>
                 <option value="<?=$marque["Libelle"]?>"><?=$marque["Libelle"]?></option>
             <?}?>
         </select><br></br>
 
-        <label for="modele">Modèle :</label>
+        <label for="modele"></label>
         <select id="modele" name="modele">
             <? foreach ($modeles as $modele) { ?>
                 <option value="<?=$modele["Modele"]?>"><?=$modele["Modele"]?></option>
@@ -105,39 +105,39 @@
         </select><br></br>
         </select><br></br>
 
-        <label for="cv">CV :</label>
+        <label for="cv"></label>
         <select id="chevaux" name="chevaux">
             <? foreach ($chevaux as $cv) { ?>
                 <option value="<?=$cv["Chevaux"]?>"><?=$cv["Chevaux"]?>cv</option>
             <?}?>
         </select><br><br>
-        <label for="prix">Prix maximum :</label>
+        <label for="prix"></label>
         <select id="prix" name ="prix">
             <? foreach ($prix as $px) { ?>
                 <option value="<?=$px["Prix"]?>"><?=$px["Prix"]?> €</option>
             <?}?>
         </select><br><br>
-        <label for="etat">État :</label>
+        <label for="etat"></label>
         <select id="etat" name="etat">
             <? foreach ($etats as $etat) { ?>
                 <option value="<?=$etat["Libelle"]?>"><?=$etat["Libelle"]?></option>
             <?}?>
         </select><br><br>
 
-        <label for="carburant">Carburant :</label>
+        <label for="carburant"></label>
         <select id="carburant" name="carburant">
         <? foreach ($carburants as $carburant) { ?>
                 <option value="<?=$carburant["Libelle"]?>"><?=$carburant["Libelle"]?></option>
         <?}?>
         </select><br><br>
 
-        <label for="kilometrage">Kilométrage :</label>
+        <label for="kilometrage"></label>
         <select id="kilometrage" name="kilometrage">
         <? foreach ($kilometrages as $kilometrage) { ?>
                 <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?>km</option>
         <?}?>
         </select><br><br>
-        <label for="annee">Année :</label>
+        <label for="annee"></label>
         <select id="Annee" name="Annee">
             <? foreach ($annees as $annee) { ?>
                 <option value="<?=$annee["Annee"]?>"><?=$annee["Annee"]?></option>
