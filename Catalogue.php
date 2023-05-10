@@ -1,4 +1,30 @@
-<!DOCTYPE html> 
+<?
+    $hostname = "localhost";
+    $user = "root";
+    $pwd = "";
+    $database = "vehiculeroy";
+    $vehicules = null;
+
+    try {
+        $mysqlConnection = new PDO(
+            'mysql:host=' . $hostname . ';dbname=' . $database,
+            $user,
+            $pwd
+        );
+        echo "Connexion réussie<br/>";
+        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        //Exécution sur le serveur de BDD
+        $statment->execute();
+        $vehicules = $statment->fetchAll();
+    } catch (PDOException $error) {
+        echo 'Échec de la connexion : ' . $error->getMessage();
+    } finally {
+        $mysqlConnection = null;
+    }
+   
+    ?>    
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,7 +32,7 @@
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-    
+
 </head>
 
 <body>
@@ -26,134 +52,58 @@
             <center>‾‾‾‾‾‾‾‾‾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
         </H3>
     </header>
-    <h1>Recherche avancée</h1>
-<<<<<<< HEAD
-=======
-=======
+
     <h1>Résultats de la recherche</h1>
-
-
-<<<<<<< HEAD
-	
-    <?
-    $hostname = "localhost";
-    $user = "root";
-    $pwd = "";
-    $database = "vehiculeroy";
-
-    try {
-        $mysqlConnection = new PDO(
-            'mysql:host=' . $hostname . ';dbname=' . $database,
-            $user,
-            $pwd
-        );
-        echo "Connexion réussie<br/>";
-        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
-        $statment = $mysqlConnection->prepare($sqlQuery);
-        //Exécution sur le serveur de BDD
-       $statment->execute();
-       $vehicules = $statment->fetchAll();
-       
-    } catch (PDOException $error) {
-        echo 'Échec de la connexion : ' . $error->getMessage();
-    } finally {
-
-
-
-        $mysqlConnection = null;
-    }
-    ?>
+   
     <form class="FromCata">
->>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
-		<form>
-  <label for="marque">Marque :</label>
-  <select id="marque" name="marque">
-    <option value="neuf">Renault</option>
-    <option value="occasion">BMW</option>
-</select><br></br>
 
-  <label for="modele">Modèle :</label>
-  <select id="modele" name="modele">
-    <option value="neuf">Tesla modèle X</option>
-    <option value="occasion">Renault Alpine</option>
-    </select><br></br>
-	</select><br></br>
+        <label for="marque">Marque :</label>
+        <select id="marque" name="marque">
+            <option value="neuf">Renault</option>
+            <option value="occasion">BMW</option>
+        </select><br></br>
 
-  <label for="cv">CV :</label>
-  <input type="number" id="cv" name="cv" value=0>
+        <label for="modele">Modèle :</label>
+        <select id="modele" name="modele">
+            <option value="neuf">Tesla modèle X</option>
+            <option value="occasion">Renault Alpine</option>
+        </select><br></br>
+        </select><br></br>
 
-  <label for="prix_max">Prix maximum :</label>
-  <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
+        <label for="cv">CV :</label>
+        <input type="number" id="cv" name="cv" value=0>
 
-  <label for="prix_min">Prix minimum :</label>
-  <input type="number" id="prix_min" name="prix_min" value="0"><br><br>
+        <label for="prix_max">Prix maximum :</label>
+        <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
 
-  <label for="etat">État :</label>
-  <select id="etat" name="etat">
-    <option value="neuf">Neuf</option>
-    <option value="occasion">Occasion</option>
-  </select><br><br>
+        <label for="prix_min">Prix minimum :</label>
+        <input type="number" id="prix_min" name="prix_min" value="0"><br><br>
 
-  <label for="carburant">Carburant :</label>
-  <select id="carburant" name="carburant">
-    <option value="essence">Essence</option>
-    <option value="diesel">Diesel</option>
-    <option value="hybride">Hybride</option>
-    <option value="electrique">Électrique</option>
-  </select><br><br>
+        <label for="etat">État :</label>
+        <select id="etat" name="etat">
+            <option value="neuf">Neuf</option>
+            <option value="occasion">Occasion</option>
+        </select><br><br>
 
-  <label for="kilometrage">Kilométrage :</label>
-  <input type="number" id="kilometrage" name="kilometrage" value=0><br><br>
+        <label for="carburant">Carburant :</label>
+        <select id="carburant" name="carburant">
+            <option value="essence">Essence</option>
+            <option value="diesel">Diesel</option>
+            <option value="hybride">Hybride</option>
+            <option value="electrique">Électrique</option>
+        </select><br><br>
 
-  <label for="annee">Année :</label>
-  <input type="number" id="annee" name="annee" value=1950><br><br>
+        <label for="kilometrage">Kilométrage :</label>
+        <input type="number" id="kilometrage" name="kilometrage" value=0><br><br>
 
-  <input type="submit" value="Envoyer">
-</form>
+        <label for="annee">Année :</label>
+        <input type="number" id="annee" name="annee" value=1950><br><br>
 
-<<<<<<< HEAD
-
+        <input type="submit" value="Envoyer">
+    </form>
     
-
-=======
->>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
-    <?
-    $hostname = "localhost";
-    $user = "root";
-    $pwd = "";
-    $database = "vehiculeroy";
-    $vehicules = null;
-
-    try {
-        $mysqlConnection = new PDO(
-            'mysql:host=' . $hostname . ';dbname=' . $database,
-            $user,
-            $pwd
-        );
-        echo "Connexion réussie<br/>";
-        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
-        $statment = $mysqlConnection->prepare($sqlQuery);
-        //Exécution sur le serveur de BDD
-       $statment->execute();
-       $vehicules = $statment->fetchAll();
-       
-    } catch (PDOException $error) {
-        echo 'Échec de la connexion : ' . $error->getMessage();
-    } finally {
-
-
-
-        $mysqlConnection = null;
-    }
-    ?>
-    <table>
-        <tr>           
-<<<<<<< HEAD
-=======
     <table class="TCata">
-        <tr class="trli" >
-            
->>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
+        <tr class="trli">
             <td>Modele</td>
             <td>Kilometrage</td>
             <td>chevaux</td>
@@ -167,7 +117,7 @@
             <td>Etat</td>
         </tr>
         <?php //On affiche les lignes du tableau une à une à l'aide d'une boucle
-        foreach ($vehicules as $vehicule){
+        foreach ($vehicules as $vehicule) {
         ?>
             <tr>
                 <td><?php echo $vehicule['Modele']; ?></td>
@@ -184,30 +134,32 @@
             </tr>
         <?
         } //fin de la boucle, le tableau contient toute la BDD
-        
+
         ?>
     </table>
-</body>
-<<<<<<< HEAD
-	<form action="tri.php" method="post">
-		<select name="tri" id="tri">
-			<option value="carburant">carburant</option>
-			<option value="etat">Etat</option>
+
+    <form action="tri.php" method="post">
+        <select name="tri" id="tri">
+            <option value="carburant">carburant</option>
+            <option value="etat">Etat</option>
             <option value="modele">Modèle</option>
-			<option value="prixmaximum">Prix maximum</option>
-			<option value="prixminimum">Prix minimum</option>
-			<option value="marque">Marque</option>
-			<option value="cv">CV</option>
-			<option value="annee">Année/option>
-		</select>
+            <option value="prixmaximum">Prix maximum</option>
+            <option value="prixminimum">Prix minimum</option>
+            <option value="marque">Marque</option>
+            <option value="cv">CV</option>
+            <option value="annee">Année/option>
+        </select>
         <div class="arrow-container">
             <i class="arrow up"></i>
             <i class="arrow down"></i>
         </div>
-		<input type="submit" value="Trier">
-	</form>
-=======
->>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
-    <h3><center><a href="cgu.php"><font color=white>Conditions générales d'utilisations</font></center></a></h3>
-    </body>
+        <input type="submit" value="Trier">
+    </form>
+    <h3>
+        <center><a href="cgu.php">
+                <font color=white>Conditions générales d'utilisations</font>
+        </center></a>
+    </h3>
+</body>
+
 </html>
