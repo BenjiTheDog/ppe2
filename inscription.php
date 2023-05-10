@@ -42,7 +42,7 @@ mysqli_close($conn);
 <head>
 	<title>Inscription</title>
     <style>
-  body{
+     body{
  background: #67BE4B;
 }
 #container{
@@ -88,7 +88,7 @@ input[type=submit]:hover {
  background-color: white;
  color: #53af57;
  border: 1px solid #53af57;
-}      
+}
     </style>
 </head>
 <body>
