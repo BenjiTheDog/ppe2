@@ -32,7 +32,7 @@
         $sqlQuery = "SELECT Libelle FROM carburant";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $carburant = $statment->fetchAll();
+        $carburants = $statment->fetchAll();
         $sqlQuery = "SELECT Chevaux FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
@@ -58,12 +58,15 @@
     ?>    
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>GarageRoy - Catalogue</title>
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
 </head>
+
 <body>
     <header>
         <h1><a href="Accueil.html"></a><img class="logobar" src="Logo2.png">
@@ -103,11 +106,17 @@
         </select><br></br>
 
         <label for="cv">CV :</label>
-        <input type="number" id="cv" name="cv" value=0>
-
+        <select id="chevaux" name="chevaux">
+            <? foreach ($chevaux as $cv) { ?>
+                <option value="<?=$cv["Chevaux"]?>"><?=$cv["Chevaux"]?></option>
+            <?}?>
+        </select><br><br>
         <label for="prix">Prix maximum :</label>
-        <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
-
+        <select id="prix" name ="prix">
+            <? foreach ($prix as $px) { ?>
+                <option value="<?=$px["Prix"]?>"><?=$px["Prix"]?> €</option>
+            <?}?>
+        </select><br><br>
         <label for="etat">État :</label>
         <select id="etat" name="etat">
             <? foreach ($etats as $etat) { ?>
@@ -117,10 +126,9 @@
 
         <label for="carburant">Carburant :</label>
         <select id="carburant" name="carburant">
-            <option value="essence">Essence</option>
-            <option value="diesel">Diesel</option>
-            <option value="hybride">Hybride</option>
-            <option value="electrique">Électrique</option>
+        <? foreach ($carburants as $carburant) { ?>
+                <option value="<?=$carburant["Libelle"]?>"><?=$carburant["Libelle"]?></option>
+            <?}?>
         </select><br><br>
 
         <label for="kilometrage">Kilométrage :</label>
