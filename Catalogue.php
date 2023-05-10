@@ -17,6 +17,38 @@
         //Exécution sur le serveur de BDD
         $statment->execute();
         $vehicules = $statment->fetchAll();
+        $sqlQuery = "SELECT Modele FROM 'vehicule'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $modele = $statment->fetchAll();
+        $sqlQuery = "SELECT Libelle FROM 'marque'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $marque = $statment->fetchAll();
+        $sqlQuery = "SELECT Libelle FROM 'etat'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $etat = $statment->fetchAll();
+        $sqlQuery = "SELECT Libelle FROM 'carburant'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $carburant = $statment->fetchAll();
+        $sqlQuery = "SELECT Chevaux FROM 'vehicule'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $chevaux = $statment->fetchAll();
+        $sqlQuery = "SELECT Prix FROM 'vehicule'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $prix = $statment->fetchAll();
+        $sqlQuery = "SELECT Kilometrage FROM 'vehicule'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $kilometrage = $statment->fetchAll();
+        $sqlQuery = "SELECT Annee FROM 'vehicule'";
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        $statment->execute();
+        $annee = $statment->fetchAll();
     } catch (PDOException $error) {
         echo 'Échec de la connexion : ' . $error->getMessage();
     } finally {
@@ -73,11 +105,8 @@
         <label for="cv">CV :</label>
         <input type="number" id="cv" name="cv" value=0>
 
-        <label for="prix_max">Prix maximum :</label>
+        <label for="prix">Prix maximum :</label>
         <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
-
-        <label for="prix_min">Prix minimum :</label>
-        <input type="number" id="prix_min" name="prix_min" value="0"><br><br>
 
         <label for="etat">État :</label>
         <select id="etat" name="etat">
@@ -155,11 +184,6 @@
         </div>
         <input type="submit" value="Trier">
     </form>
-    <h3>
-        <center><a href="cgu.php">
-                <font color=white>Conditions générales d'utilisations</font>
-        </center></a>
-    </h3>
 </body>
 
 </html>
