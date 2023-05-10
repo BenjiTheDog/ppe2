@@ -17,35 +17,35 @@
         //Exécution sur le serveur de BDD
         $statment->execute();
         $vehicules = $statment->fetchAll();
-        $sqlQuery = "SELECT Modele FROM 'vehicule'";
+        $sqlQuery = "SELECT Modele FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $modele = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM 'marque'";
+        $sqlQuery = "SELECT Libelle FROM marque";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $marque = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM 'etat'";
+        $marques = $statment->fetchAll();
+        $sqlQuery = "SELECT Libelle FROM etat";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $etat = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM 'carburant'";
+        $sqlQuery = "SELECT Libelle FROM carburant";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $carburant = $statment->fetchAll();
-        $sqlQuery = "SELECT Chevaux FROM 'vehicule'";
+        $sqlQuery = "SELECT Chevaux FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $chevaux = $statment->fetchAll();
-        $sqlQuery = "SELECT Prix FROM 'vehicule'";
+        $sqlQuery = "SELECT Prix FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $prix = $statment->fetchAll();
-        $sqlQuery = "SELECT Kilometrage FROM 'vehicule'";
+        $sqlQuery = "SELECT Kilometrage FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $kilometrage = $statment->fetchAll();
-        $sqlQuery = "SELECT Annee FROM 'vehicule'";
+        $sqlQuery = "SELECT Annee FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $annee = $statment->fetchAll();
@@ -92,14 +92,14 @@
 
         <label for="marque">Marque :</label>
         <select id="marque" name="marque">
-            <option value="neuf">Renault</option>
-            <option value="occasion">BMW</option>
+            <? foreach ($marques as $marque) { ?>
+                <option value="<?=$marque["Libelle"]?>"><?=$marque["Libelle"]?></option>
+            <?}?>
         </select><br></br>
 
         <label for="modele">Modèle :</label>
         <select id="modele" name="modele">
-            <option value="neuf">Tesla modèle X</option>
-            <option value="occasion">Renault Alpine</option>
+                <? foreach ($modeles as $modele) 
         </select><br></br>
         </select><br></br>
 
