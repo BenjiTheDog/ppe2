@@ -1,8 +1,8 @@
 <?php
 // Connexion à la base de données MySQL
 $servername = "localhost";
-$username = "nom_utilisateur";
-$password = "mot_de_passe";
+$username = "root";
+$password = "";
 $dbname = "utilisateur";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -41,10 +41,24 @@ mysqli_close($conn);
 <html>
 <head>
 	<title>Inscription</title>
+    <style>
+.formulaire {
+ width:100%;
+ padding: 30px;
+ border: 1px solid #f1f1f1;
+ background: #fff;
+ box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+ width: 38%;
+ margin: 0 auto;
+ padding-bottom: 10px;
+}     
+    </style>
 </head>
 <body>
 	<h2>Inscription</h2>
-	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+	<form class="formulaire" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<label for="username">Nom d'utilisateur :</label>
 		<input type="text" name="username" id="username" required>
 		<label for="password">Mot de passe :</label>
