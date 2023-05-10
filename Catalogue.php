@@ -25,15 +25,15 @@
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $marques = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM etat";
+        $sqlQuery = "SELECT Libelle FROM etat ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $etats = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM carburant";
+        $sqlQuery = "SELECT Libelle FROM carburant ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $carburants = $statment->fetchAll();
-        $sqlQuery = "SELECT Chevaux FROM vehicule";
+        $sqlQuery = "SELECT Chevaux FROM vehicule ORDER BY Chevaux ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $chevaux = $statment->fetchAll();
