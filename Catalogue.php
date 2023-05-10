@@ -78,13 +78,13 @@
 	</select><br></br>
 
   <label for="cv">CV :</label>
-  <input type="number" id="cv" name="cv">
+  <input type="number" id="cv" name="cv" value=0>
 
   <label for="prix_max">Prix maximum :</label>
-  <input type="number" id="prix_max" name="prix_max"><br><br>
+  <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
 
   <label for="prix_min">Prix minimum :</label>
-  <input type="number" id="prix_min" name="prix_min"><br><br>
+  <input type="number" id="prix_min" name="prix_min" value="0"><br><br>
 
   <label for="etat">État :</label>
   <select id="etat" name="etat">
@@ -101,10 +101,10 @@
   </select><br><br>
 
   <label for="kilometrage">Kilométrage :</label>
-  <input type="number" id="kilometrage" name="kilometrage"><br><br>
+  <input type="number" id="kilometrage" name="kilometrage" value=0><br><br>
 
   <label for="annee">Année :</label>
-  <input type="number" id="annee" name="annee"><br><br>
+  <input type="number" id="annee" name="annee" value=1950><br><br>
 
   <input type="submit" value="Envoyer">
 </form>
