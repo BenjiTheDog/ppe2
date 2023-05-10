@@ -17,11 +17,11 @@
         //Exécution sur le serveur de BDD
         $statment->execute();
         $vehicules = $statment->fetchAll();
-        $sqlQuery = "SELECT Modele FROM vehicule";
+        $sqlQuery = "SELECT Modele FROM vehicule ORDER BY Modele ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $modeles = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM marque";
+        $sqlQuery = "SELECT Libelle FROM marque ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $marques = $statment->fetchAll();
@@ -108,7 +108,7 @@
         <label for="cv">CV :</label>
         <select id="chevaux" name="chevaux">
             <? foreach ($chevaux as $cv) { ?>
-                <option value="<?=$cv["Chevaux"]?>"><?=$cv["Chevaux"]?></option>
+                <option value="<?=$cv["Chevaux"]?>"><?=$cv["Chevaux"]?>cv</option>
             <?}?>
         </select><br><br>
         <label for="prix">Prix maximum :</label>
@@ -134,7 +134,7 @@
         <label for="kilometrage">Kilométrage :</label>
         <select id="kilometrage" name="kilometrage">
         <? foreach ($kilometrages as $kilometrage) { ?>
-                <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?></option>
+                <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?>km</option>
         <?}?>
         </select><br><br>
         <label for="annee">Année :</label>
