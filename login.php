@@ -1,3 +1,4 @@
+
 <html>
  <head>
  <meta charset="utf-8">
@@ -49,6 +50,21 @@ input[type=submit]:hover {
  color: #53af57;
  border: 1px solid #53af57;
 }
+.btn{
+ background-color: #53af57;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ cursor: pointer;
+ width: 100%;
+
+}
+.btn:hover{
+    background-color: white;
+ color: #53af57;
+ border: 1px solid #53af57;
+}
 </style>
  </head>
  <body>
@@ -65,7 +81,7 @@ input[type=submit]:hover {
  <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
  <input type="submit" id='submit' value='Se connecter' >
- <input type="submit" name="submit" value="S'inscrire" formaction="inscription.php" >
+ <button class="btn" onclick="window.location.href='inscription.php'">S'inscrire</button>
  <?php
  if(isset($_GET['erreur'])){
  $err = $_GET['erreur'];
@@ -73,6 +89,7 @@ input[type=submit]:hover {
  echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
  }
  ?>
+ 
  </form>
  </div>
 

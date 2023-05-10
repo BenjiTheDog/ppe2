@@ -72,7 +72,8 @@
         <h1><a href="Accueil.html"></a><img class="logobar" src="Logo2.png">
             <form action="#" method="get">
                 <input type="text" placeholder="Rechercher sur GarageRoy"> <!--Barre de recherche a rendre fonctionnel-->
-            </form>
+</form>
+<h4 class="orange"><center><a class="olink" href="login.php">connexion</a> / <a class="olink" href="inscription.php">inscription</a></center></h4>
         </h1>
     </header>
     <header>
