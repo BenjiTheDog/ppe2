@@ -29,17 +29,50 @@
     <h1>Résultats de la recherche</h1>
 
 
-		<form>
+	
+    <?
+    $hostname = "localhost";
+    $user = "root";
+    $pwd = "";
+    $database = "vehiculeroy";
+
+    try {
+        $mysqlConnection = new PDO(
+            'mysql:host=' . $hostname . ';dbname=' . $database,
+            $user,
+            $pwd
+        );
+        echo "Connexion réussie<br/>";
+        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        //Exécution sur le serveur de BDD
+       $statment->execute();
+       $vehicules = $statment->fetchAll();
+       
+    } catch (PDOException $error) {
+        echo 'Échec de la connexion : ' . $error->getMessage();
+    } finally {
+
+
+
+        $mysqlConnection = null;
+    }
+    ?>
+    <form class="FromCata">
   <label for="marque">Marque :</label>
-  <input type="text" id="marque" name="marque"><br><br>
+  <select id="marque" name="marque">
     <option value="neuf">Renault</option>
     <option value="occasion">BMW</option>
+</select><br></br>
 
   <label for="modele">Modèle :</label>
-  <input type="text" id="modele" name="modele"><br><br>
+  <select id="modele" name="modele">
+    <option value="neuf">Tesla modèle X</option>
+    <option value="occasion">Renault Alpine</option>
+    </select><br></br>
 
   <label for="cv">CV :</label>
-  <input type="number" id="cv" name="cv"><br><br>
+  <input type="number" id="cv" name="cv">
 
   <label for="prix_max">Prix maximum :</label>
   <input type="number" id="prix_max" name="prix_max"><br><br>
@@ -69,49 +102,8 @@
 
   <input type="submit" value="Envoyer">
 </form>
-
-
-    <form action="tri.php" method="post">
-        <label for="tri">Trier par:</label>
-        <select name="tri" id="tri">
-            <option value="carburant">carburant</option>
-            <option value="etat">Etat</option>
-            <option value="typevehicule">Type de véhicule</option>
-            <option value="vehicule">Vehicule</option>
-        </select>
-        <input type="submit" value="Trier">
-    </form>
-
-    <?
-    $hostname = "localhost";
-    $user = "root";
-    $pwd = "";
-    $database = "vehiculeroy";
-
-    try {
-        $mysqlConnection = new PDO(
-            'mysql:host=' . $hostname . ';dbname=' . $database,
-            $user,
-            $pwd
-        );
-        echo "Connexion réussie<br/>";
-        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
-        $statment = $mysqlConnection->prepare($sqlQuery);
-        //Exécution sur le serveur de BDD
-       $statment->execute();
-       $vehicules = $statment->fetchAll();
-       
-    } catch (PDOException $error) {
-        echo 'Échec de la connexion : ' . $error->getMessage();
-    } finally {
-
-
-
-        $mysqlConnection = null;
-    }
-    ?>
     <table class="TCata">
-        <tr >
+        <tr class="trli" >
             
             <td>Modele</td>
             <td>Kilometrage</td>

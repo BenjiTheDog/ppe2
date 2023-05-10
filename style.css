@@ -324,3 +324,11 @@ td:not(:last-child) {
 tr:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
+.trli {
+  text-decoration: underline;
+  text-decoration: solid 1px;
+}
+
+.FromCata {
+  color: #ddd;
+}
