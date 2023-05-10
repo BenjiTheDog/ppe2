@@ -27,6 +27,44 @@
         </H3>
     </header>
     <h1>Recherche avancée</h1>
+<<<<<<< HEAD
+=======
+=======
+    <h1>Résultats de la recherche</h1>
+
+
+<<<<<<< HEAD
+	
+    <?
+    $hostname = "localhost";
+    $user = "root";
+    $pwd = "";
+    $database = "vehiculeroy";
+
+    try {
+        $mysqlConnection = new PDO(
+            'mysql:host=' . $hostname . ';dbname=' . $database,
+            $user,
+            $pwd
+        );
+        echo "Connexion réussie<br/>";
+        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
+        $statment = $mysqlConnection->prepare($sqlQuery);
+        //Exécution sur le serveur de BDD
+       $statment->execute();
+       $vehicules = $statment->fetchAll();
+       
+    } catch (PDOException $error) {
+        echo 'Échec de la connexion : ' . $error->getMessage();
+    } finally {
+
+
+
+        $mysqlConnection = null;
+    }
+    ?>
+    <form class="FromCata">
+>>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
 		<form>
   <label for="marque">Marque :</label>
   <select id="marque" name="marque">
@@ -38,16 +76,17 @@
   <select id="modele" name="modele">
     <option value="neuf">Tesla modèle X</option>
     <option value="occasion">Renault Alpine</option>
+    </select><br></br>
 	</select><br></br>
 
   <label for="cv">CV :</label>
-  <input type="number" id="cv" name="cv">
+  <input type="number" id="cv" name="cv" value=0>
 
   <label for="prix_max">Prix maximum :</label>
-  <input type="number" id="prix_max" name="prix_max"><br><br>
+  <input type="number" id="prix_max" name="prix_max" value="1000"><br><br>
 
   <label for="prix_min">Prix minimum :</label>
-  <input type="number" id="prix_min" name="prix_min"><br><br>
+  <input type="number" id="prix_min" name="prix_min" value="0"><br><br>
 
   <label for="etat">État :</label>
   <select id="etat" name="etat">
@@ -64,17 +103,20 @@
   </select><br><br>
 
   <label for="kilometrage">Kilométrage :</label>
-  <input type="number" id="kilometrage" name="kilometrage"><br><br>
+  <input type="number" id="kilometrage" name="kilometrage" value=0><br><br>
 
   <label for="annee">Année :</label>
-  <input type="number" id="annee" name="annee"><br><br>
+  <input type="number" id="annee" name="annee" value=1950><br><br>
 
   <input type="submit" value="Envoyer">
 </form>
 
+<<<<<<< HEAD
 
     
 
+=======
+>>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
     <?
     $hostname = "localhost";
     $user = "root";
@@ -106,6 +148,12 @@
     ?>
     <table>
         <tr>           
+<<<<<<< HEAD
+=======
+    <table class="TCata">
+        <tr class="trli" >
+            
+>>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
             <td>Modele</td>
             <td>Kilometrage</td>
             <td>chevaux</td>
@@ -140,6 +188,7 @@
         ?>
     </table>
 </body>
+<<<<<<< HEAD
 	<form action="tri.php" method="post">
 		<select name="tri" id="tri">
 			<option value="carburant">carburant</option>
@@ -157,6 +206,8 @@
         </div>
 		<input type="submit" value="Trier">
 	</form>
+=======
+>>>>>>> b0e43942f4cbe358d3484c6677842caaac58e62e
     <h3><center><a href="cgu.php"><font color=white>Conditions générales d'utilisations</font></center></a></h3>
     </body>
 </html>
