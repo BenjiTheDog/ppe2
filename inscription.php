@@ -1,48 +1,8 @@
-<?php
-// Connexion à la base de données MySQL
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "utilisateur";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Vérification de la connexion
-if (!$conn) {
-	die("Connexion échouée : " . mysqli_connect_error());
-}
-
-// Vérification si le formulaire a été soumis
-if (isset($_POST['submit'])) {
-	// Récupération des données du formulaire
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-	// Vérification si le nom d'utilisateur existe déjà dans la base de données
-	$sql = "SELECT * FROM utilisateur WHERE nom_utilisateur='$username'";
-	$result = mysqli_query($conn, $sql);
-	if (mysqli_num_rows($result) > 0) {
-		echo "Le nom d'utilisateur existe déjà.";
-	} else {
-		// Insertion des données dans la base de données
-		$sql = "INSERT INTO utilisateur (nom_utilisateur, mot_de_passe) VALUES ('$username', '$password')";
-		if (mysqli_query($conn, $sql)) {
-			echo "Inscription réussie.";
-		} else {
-			echo "Erreur : " . mysqli_error($conn);
-		}
-	}
-}
-
-// Fermeture de la connexion à la base de données
-mysqli_close($conn);
-?>
-
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Inscription</title>
-    <style>
-     body{
+ <head>
+ <meta charset="utf-8">
+<style>
+body{
  background: #67BE4B;
 }
 #container{
@@ -89,18 +49,34 @@ input[type=submit]:hover {
  color: #53af57;
  border: 1px solid #53af57;
 }
-    </style>
-</head>
-<body>
-	<h1>Inscription</h1>
-	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label><b>Nom d'utilisateur</b></label>
+
+</style>
+ </head>
+ <body>
+ <div id="container">
+ <!-- zone de connexion -->
+ 
+ <form action="verification.php" method="POST">
+ <h1>Inscription</h1>
+ 
+ <label><b>Nom d'utilisateur</b></label>
  <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 
  <label><b>Mot de passe</b></label>
  <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-       
-		<input type="submit" name="submit" value="S'inscrire">
-	</form>
-</body>
+
+ <input type="submit" id='submit' value="S'inscrire" >
+ 
+ <?php
+ if(isset($_GET['erreur'])){
+ $err = $_GET['erreur'];
+ if($err==1 || $err==2)
+ echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+ }
+ ?>
+ 
+ </form>
+ </div>
+
+ </body>
 </html>
