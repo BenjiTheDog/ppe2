@@ -94,11 +94,11 @@ input[type=submit]:hover {
 <body>
 	<h1>Inscription</h1>
 	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<label for="username">Nom d'utilisateur :</label>
-		<input type="text" name="username" id="username" required>
-      
-		<label for="password">Mot de passe :</label>
-		<input type="password" name="password" id="password" required>
+    <label><b>Nom d'utilisateur</b></label>
+ <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+
+ <label><b>Mot de passe</b></label>
+ <input type="password" placeholder="Entrer le mot de passe" name="password" required>
        
 		<input type="submit" name="submit" value="S'inscrire">
 	</form>
