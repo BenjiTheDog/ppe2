@@ -28,7 +28,7 @@
         $sqlQuery = "SELECT Libelle FROM etat";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $etat = $statment->fetchAll();
+        $etats = $statment->fetchAll();
         $sqlQuery = "SELECT Libelle FROM carburant";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
@@ -96,9 +96,9 @@
 
         <label for="modele">Modèle :</label>
         <select id="modele" name="modele">
-                <? foreach ($modeles as $modele) { ?>
-                    <option value="<?=$modele["Modele"]?>"<?=$modele["Modele"]?></option>
-                <?}?> 
+            <? foreach ($modeles as $modele) { ?>
+                <option value="<?=$modele["Modele"]?>"><?=$modele["Modele"]?></option>
+            <?}?> 
         </select><br></br>
         </select><br></br>
 
@@ -110,8 +110,9 @@
 
         <label for="etat">État :</label>
         <select id="etat" name="etat">
-            <option value="neuf">Neuf</option>
-            <option value="occasion">Occasion</option>
+            <? foreach ($etats as $etat) { ?>
+                <option value="<?=$etat["Libelle"]?>"><?=$etat["Libelle"]?></option>
+            <?}?>
         </select><br><br>
 
         <label for="carburant">Carburant :</label>
