@@ -37,14 +37,14 @@
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $chevaux = $statment->fetchAll();
-        $sqlQuery = "SELECT Prix FROM vehicule";
+        $sqlQuery = "SELECT Prix FROM vehicule ORDER BY prix ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $prix = $statment->fetchAll();
-        $sqlQuery = "SELECT Kilometrage FROM vehicule";
+        $sqlQuery = "SELECT DISTINCT Kilometrage FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
-        $kilometrage = $statment->fetchAll();
+        $kilometrages = $statment->fetchAll();
         $sqlQuery = "SELECT Annee FROM vehicule";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
@@ -128,13 +128,17 @@
         <select id="carburant" name="carburant">
         <? foreach ($carburants as $carburant) { ?>
                 <option value="<?=$carburant["Libelle"]?>"><?=$carburant["Libelle"]?></option>
-            <?}?>
+        <?}?>
         </select><br><br>
 
         <label for="kilometrage">Kilométrage :</label>
-        <input type="number" id="kilometrage" name="kilometrage" value=0><br><br>
-
+        <select id="kilometrage" name="kilometrage">
+        <? foreach ($kilometrages as $kilometrage) { ?>
+                <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?></option>
+        <?}?>
         <label for="annee">Année :</label>
+        </select><br><br>
+
         <input type="number" id="annee" name="annee" value=1950><br><br>
 
         <input type="submit" value="Envoyer">
