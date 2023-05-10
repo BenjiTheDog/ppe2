@@ -64,8 +64,8 @@ input[type=submit]:hover {
  <label><b>Mot de passe</b></label>
  <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
- <input type="submit" id='submit' value='Se connecté' >
- <input type="submit" name="submit" value="S'inscrire">
+ <input type="submit" id='submit' value='Se connecter' >
+ <input type="submit" name="submit" value="S'inscrire" formaction="inscription.php" >
  <?php
  if(isset($_GET['erreur'])){
  $err = $_GET['erreur'];
