@@ -10,11 +10,48 @@
             'mysql:host=' . $hostname . ';dbname=' . $database,
             $user,
             $pwd
-        );
+        ); 
         echo "Connexion réussie<br/>";
-        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC, marque.Libelle as LM,typevehicule.Libelle as LT,etat.Libelle as LE FROM `vehicule` INNER JOIN carburant on carburant.id = vehicule.Id_Carburant INNER JOIN etat on etat.id = vehicule.id_Etat INNER JOIN marque on marque.id = vehicule.id_Marque INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule  "; //Préparation de la requête par PDO
+        $condition = "";
+        if (isset ($_POST["marque"])) {
+            if ($_POST["marque"] != "Par défaut") {
+                $condition .= " AND marque.Libelle = '" . $_POST["marque"] . "'";
+            }
+            if ($_POST["modele"] != "Par défaut") {
+                $condition .= " AND vehicule.Modele = '" . $_POST["modele"] . "'";
+            }
+            if ($_POST["chevaux"] != "Par défaut") {
+                $condition .= " AND vehicule.Chevaux = '" . $_POST["chevaux"] . "'";
+            }
+            if ($_POST["prix"] != "Par défaut") {
+                $condition .= " AND vehicule.PrixP = '" . $_POST["prix"] . "'";
+            }
+            if ($_POST["etat"] != "Par défaut") {
+                $condition .= " AND etat.Libelle = '" . $_POST["etat"] . "'";
+            }
+            if ($_POST["carburant"] != "Par défaut") {
+                $condition .= " AND carburant.Libelle = '" . $_POST["carburant"] . "'";
+            }
+            if ($_POST["kilometrage"] != "Par défaut") {
+                $condition .= " AND vehicule.Kilometrage = '" . $_POST["kilometrage"] . "'";
+            }
+            if ($_POST["Annee"] != "Par défaut") {
+                $condition .= " AND vehicule.Annee= '" . $_POST["Annee"] . "'";
+            }
+        };
+        $sqlQuery = "SELECT vehicule.Modele,vehicule.Kilometrage,vehicule.chevaux,vehicule.Annee,vehicule.Prix,vehicule.Image,vehicule.PrixP,carburant.Libelle as LC,
+         marque.Libelle as LM,
+         typevehicule.Libelle as LT,
+         etat.Libelle as LE 
+         FROM `vehicule` 
+         INNER JOIN carburant on carburant.id = vehicule.Id_Carburant 
+         INNER JOIN etat on etat.id = vehicule.id_Etat 
+         INNER JOIN marque on marque.id = vehicule.id_Marque 
+         INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule 
+         WHERE marque.id > 0 $condition "; //Préparation de la requête par PDO
         $statment = $mysqlConnection->prepare($sqlQuery);
         //Exécution sur le serveur de BDD
+        echo $sqlQuery;
         $statment->execute();
         $vehicules = $statment->fetchAll();
         $sqlQuery = "SELECT Modele FROM vehicule ORDER BY Modele ASC";
@@ -87,10 +124,11 @@
 
     <h1>Résultats de la recherche</h1>
    
-    <form class="FromCata">
+    <form class="FromCata" method="post">
 
         <label for="marque"></label>
         <select id="marque" name="marque">
+            <option value="Par défaut" ></option> 
             <? foreach ($marques as $marque) { ?>
                 <option value="<?=utf8_encode($marque["Libelle"])?>"><?=utf8_encode($marque["Libelle"])?></option>
             <?}?>
@@ -98,6 +136,7 @@
 
         <label for="modele"></label>
         <select id="modele" name="modele">
+        <option value="Par défaut" ></option> 
             <? foreach ($modeles as $modele) { ?>
                 <option value="<?=utf8_encode($modele["Modele"])?>"><?=utf8_encode($modele["Modele"])?></option>
             <?}?> 
@@ -106,18 +145,21 @@
 
         <label for="cv"></label>
         <select id="chevaux" name="chevaux">
+        <option value="Par défaut" ></option> 
             <? foreach ($chevaux as $cv) { ?>
                 <option value="<?=$cv["Chevaux"]?>"><?=$cv["Chevaux"]?>cv</option>
             <?}?>
         </select><br><br>
         <label for="prix"></label>
         <select id="prix" name ="prix">
+        <option value="Par défaut" ></option> 
             <? foreach ($prix as $px) { ?>
                 <option value="<?=$px["Prix"]?>"><?=$px["Prix"]?> €</option>
             <?}?>
         </select><br><br>
         <label for="etat"></label>
         <select id="etat" name="etat">
+        <option value="Par défaut" ></option> 
             <? foreach ($etats as $etat) { ?>
                 <option value="<?=utf8_encode($etat["Libelle"])?>"><?=utf8_encode($etat["Libelle"])?></option>
             <?}?>
@@ -125,6 +167,7 @@
 
         <label for="carburant"></label>
         <select id="carburant" name="carburant">
+        <option value="Par défaut" ></option> 
         <? foreach ($carburants as $carburant) { ?>
                 <option value="<?=utf8_encode($carburant["Libelle"])?>"><?=utf8_encode($carburant["Libelle"])?></option>
         <?}?>
@@ -132,12 +175,14 @@
 
         <label for="kilometrage"></label>
         <select id="kilometrage" name="kilometrage">
+        <option value="Par défaut" ></option> 
         <? foreach ($kilometrages as $kilometrage) { ?>
                 <option value="<?=$kilometrage["Kilometrage"]?>"><?=$kilometrage["Kilometrage"]?>km</option>
         <?}?>
         </select><br><br>
         <label for="annee"></label>
         <select id="Annee" name="Annee">
+        <option value="Par défaut" ></option> 
             <? foreach ($annees as $annee) { ?>
                 <option value="<?=$annee["Annee"]?>"><?=$annee["Annee"]?></option>
             <?}?>
