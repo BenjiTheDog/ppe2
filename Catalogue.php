@@ -23,10 +23,10 @@
                 $condition .= " AND vehicule.Chevaux = '" . $_POST["chevaux"] . "'";
             }
             if ($_POST["prix"] != "Par défaut") {
-                $condition .= " AND vehicule.PrixP = '" . $_POST["prix"] . "'";
+                $condition .= " AND vehicule.Prix = '" . $_POST["prix"] . "'";
             }
             if ($_POST["etat"] != "Par défaut") {
-                $condition .= " AND etat.Libelle = '" . $_POST["etat"] . "'";
+                $condition .= " AND etat.Libelle = '" . utf8_encode($_POST["etat"]) . "'";
             }
             if ($_POST["carburant"] != "Par défaut") {
                 $condition .= " AND carburant.Libelle = '" . $_POST["carburant"] . "'";
@@ -47,7 +47,9 @@
          INNER JOIN etat on etat.id = vehicule.id_Etat 
          INNER JOIN marque on marque.id = vehicule.id_Marque 
          INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule 
-         WHERE marque.id > 0 $condition "; //Préparation de la requête par PDO
+         WHERE marque.id > 0 $condition ";
+         //Préparation de la requête par PDO
+         echo $sqlQuery;
         $statment = $mysqlConnection->prepare($sqlQuery);
         //Exécution sur le serveur de BDD
         $statment->execute();
