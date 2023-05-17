@@ -11,7 +11,6 @@
             $user,
             $pwd
         ); 
-        echo "Connexion réussie<br/>";
         $condition = "";
         if (isset ($_POST["marque"])) {
             if ($_POST["marque"] != "Par défaut") {
