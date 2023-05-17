@@ -1,54 +1,50 @@
 
 <?php
 // Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "utilisateur";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$host = "localhost"; // Adresse du serveur de base de données
+$dbname = "utilisateur"; // Nom de la base de données
+$username = "root"; // Nom d'utilisateur de la base de données
+$password = ""; // Mot de passe de la base de données
 
-// Vérification de la connexion
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    // Configuration pour afficher les erreurs de requête
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Vérification si le formulaire d'inscription a été soumis
-if(isset($_POST['register'])) {
+// Vérification du formulaire d'inscription
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    // Récupération des valeurs des champs du formulaire
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // Vérification si le nom d'utilisateur existe déjà
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE nom_utilisateur = :username");
+    $stmt->execute(["username" => $username]);
+    $existingUser = $stmt->fetch();
 
-    // Vérification si le nom d'utilisateur existe déjà dans la base de données
-    $query = "SELECT * FROM utilisateur WHERE nom_utilisateur='$username'";
-    $result = mysqli_query($conn, $query);
-
-    if(mysqli_num_rows($result) > 0) {
-        // Si le nom d'utilisateur existe déjà, afficher un message d'erreur
-        echo "<p style='color:red'>Ce nom d'utilisateur existe déjà.</p>";
+    if ($existingUser) {
+        $error = "Le nom d'utilisateur existe déjà.";
     } else {
-        // Sinon, insérer les valeurs dans la base de données
-        $query = "INSERT INTO utilisateur (nom_utilisateur, mot_de_passe) VALUES ('$username', '$password')";
-        $result = mysqli_query($conn, $query);
+        // Enregistrement du nouvel utilisateur dans la base de données
+        $stmt = $pdo->prepare("INSERT INTO utilisateur (nom_utilisateur, mot_de_passe) VALUES (:username, :password)");
+        $stmt->execute(["username" => $username, "password" => $password]);
 
-        if($result) {
-            // Si l'insertion a réussi, afficher un message de succès
-            echo "<p style='color:green'>Inscription réussie ! Vous pouvez maintenant vous connecter.</p>";
-        } else {
-            // Sinon, afficher un message d'erreur
-            echo "<p style='color:red'>Erreur lors de l'inscription.</p>";
-        }
+        // Redirection vers une page de succès ou autre action souhaitée
+        header("Location: login.php");
+        exit();
     }
 }
-
-mysqli_close($conn); // Fermeture de la connexion à la base de données
 ?>
+
 
 <html>
     <header>
         <style>
 body {
   background: black;
+  color: #fff;
 }
 
 #container {
@@ -61,8 +57,8 @@ body {
 form {
   width: 20%;
   padding: 30px;
-  border: 1px solid #f1f1f1;
-  background: #fff;
+  border: 1px solid #403E3E;
+  background: #403E3E;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   margin:auto ;
   margin-top: 10%;
@@ -90,7 +86,7 @@ input[type=password] {
 
 input[type=submit] {
   background-color: orange;
-  color: white;
+  color: #403E3E;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -100,14 +96,14 @@ input[type=submit] {
 
 input[type=submit]:hover,
 .btn:hover {
-  background-color: white;
+  background-color: #403E3E;
   color: orange;
   border: 1px solid orange;
 }
 
 .btn {
   background-color: orange;
-  color: white;
+  color: #403E3E;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -135,13 +131,10 @@ input[type=submit]:hover,
     <button class="btn" type="button" onclick="window.location.href='login.php'">Se connecter</button>
 </form>
 <script>
-    document.getElementById("register-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Empêche le formulaire de se soumettre
-        // Afficher une pop-up avec un message de succès
-        alert("Inscription réussie !");
-        // Rediriger l'utilisateur vers la page de connexion
-        window.location.href = "login.php";
-    });
+ 
+    
+    
+  
 </script>
 
 </body>

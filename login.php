@@ -5,6 +5,7 @@
 <style>
 body{
  background: black;
+ color: #fff;
 }
 #container{
  width:380px;
@@ -16,14 +17,15 @@ body{
 form {
  width:100%;
  padding: 30px;
- border: 1px solid #f1f1f1;
- background: #fff;
+ border: 1px solid #403E3E;
+ background: #403E3E;
  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
  width: 100%;
  margin: 0 auto;
  padding-bottom: 10px;
+ color: #fff;
 }
 
 /* Full-width inputs */
@@ -47,7 +49,7 @@ input[type=submit] {
  width: 100%;
 }
 input[type=submit]:hover {
- background-color: white;
+ background-color: #403E3E;
  color: orange;
  border: 1px solid orange;
 }
@@ -62,7 +64,7 @@ input[type=submit]:hover {
 
 }
 .btn:hover{
-    background-color: white;
+    background-color: #403E3E;
  color: orange;
  border: 1px solid orange;
 }
@@ -92,8 +94,15 @@ input[type=submit]:hover {
  }
  ?>
  
+    
  </form>
  </div>
-
+<script>
+        window.addEventListener("DOMContentLoaded", function() {
+      document.background.addEventListener("click", function() {
+        window.location.href = "Accueil.html";
+      });
+    });
+</script>
  </body>
 </html>
