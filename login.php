@@ -4,12 +4,13 @@
  <meta charset="utf-8">
 <style>
 body{
- background: #67BE4B;
+ background: black;
 }
 #container{
- width:400px;
+ width:380px;
  margin:0 auto;
  margin-top:10%;
+ padding-top: 20px;
 }
 /* Bordered form */
 form {
@@ -20,7 +21,7 @@ form {
  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
- width: 38%;
+ width: 100%;
  margin: 0 auto;
  padding-bottom: 10px;
 }
@@ -37,7 +38,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 input[type=submit] {
- background-color: #53af57;
+ background-color: orange;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -47,11 +48,11 @@ input[type=submit] {
 }
 input[type=submit]:hover {
  background-color: white;
- color: #53af57;
- border: 1px solid #53af57;
+ color: orange;
+ border: 1px solid orange;
 }
 .btn{
- background-color: #53af57;
+ background-color: orange;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -62,8 +63,8 @@ input[type=submit]:hover {
 }
 .btn:hover{
     background-color: white;
- color: #53af57;
- border: 1px solid #53af57;
+ color: orange;
+ border: 1px solid orange;
 }
 </style>
  </head>

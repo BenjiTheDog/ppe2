@@ -48,21 +48,28 @@ mysqli_close($conn); // Fermeture de la connexion à la base de données
     <header>
         <style>
 body {
-  background: #67BE4B;
+  background: black;
 }
 
 #container {
   width: 400px;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 30%;
+  
 }
 
 form {
-  width: 100%;
+  width: 20%;
   padding: 30px;
   border: 1px solid #f1f1f1;
   background: #fff;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin:auto ;
+  margin-top: 10%;
+
+
+  
+
 }
 
 #container h1 {
@@ -82,7 +89,7 @@ input[type=password] {
 }
 
 input[type=submit] {
-  background-color: #53af57;
+  background-color: orange;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -94,12 +101,12 @@ input[type=submit] {
 input[type=submit]:hover,
 .btn:hover {
   background-color: white;
-  color: #53af57;
-  border: 1px solid #53af57;
+  color: orange;
+  border: 1px solid orange;
 }
 
 .btn {
-  background-color: #53af57;
+  background-color: orange;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -108,10 +115,6 @@ input[type=submit]:hover,
   width: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
 
 
             </style>
