@@ -4,25 +4,28 @@
  <meta charset="utf-8">
 <style>
 body{
- background: #67BE4B;
+ background: black;
+ color: #fff;
 }
 #container{
- width:400px;
+ width:380px;
  margin:0 auto;
  margin-top:10%;
+ padding-top: 20px;
 }
 /* Bordered form */
 form {
  width:100%;
  padding: 30px;
- border: 1px solid #f1f1f1;
- background: #fff;
+ border: 1px solid #403E3E;
+ background: #403E3E;
  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
- width: 38%;
+ width: 100%;
  margin: 0 auto;
  padding-bottom: 10px;
+ color: #fff;
 }
 
 /* Full-width inputs */
@@ -37,7 +40,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 input[type=submit] {
- background-color: #53af57;
+ background-color: orange;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -46,12 +49,12 @@ input[type=submit] {
  width: 100%;
 }
 input[type=submit]:hover {
- background-color: white;
- color: #53af57;
- border: 1px solid #53af57;
+ background-color: #403E3E;
+ color: orange;
+ border: 1px solid orange;
 }
 .btn{
- background-color: #53af57;
+ background-color: orange;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -61,9 +64,9 @@ input[type=submit]:hover {
 
 }
 .btn:hover{
-    background-color: white;
- color: #53af57;
- border: 1px solid #53af57;
+    background-color: #403E3E;
+ color: orange;
+ border: 1px solid orange;
 }
 </style>
  </head>
@@ -82,6 +85,7 @@ input[type=submit]:hover {
 
  <input type="submit" id='submit' value='Se connecter' >
  <button class="btn" type="button" onclick="window.location.href='inscription.php'">S'inscrire</button>
+ <button class="btn" type="button" onclick="window.location.href='Accueil.html'">Revenir à l'accueil</button>
 
  <?php
  if(isset($_GET['erreur'])){
@@ -91,8 +95,10 @@ input[type=submit]:hover {
  }
  ?>
  
+    
  </form>
  </div>
 
+</script>
  </body>
 </html>
