@@ -51,7 +51,6 @@
          WHERE marque.id > 0 $condition "; //Préparation de la requête par PDO
         $statment = $mysqlConnection->prepare($sqlQuery);
         //Exécution sur le serveur de BDD
-        echo $sqlQuery;
         $statment->execute();
         $vehicules = $statment->fetchAll();
         $sqlQuery = "SELECT Modele FROM vehicule ORDER BY Modele ASC";
