@@ -85,6 +85,7 @@ input[type=submit]:hover {
 
  <input type="submit" id='submit' value='Se connecter' >
  <button class="btn" type="button" onclick="window.location.href='inscription.php'">S'inscrire</button>
+ <button class="btn" type="button" onclick="window.location.href='Accueil.html'">Revenir à l'accueil</button>
 
  <?php
  if(isset($_GET['erreur'])){

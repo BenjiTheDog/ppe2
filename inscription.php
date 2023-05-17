@@ -5,7 +5,7 @@ $host = "localhost"; // Adresse du serveur de base de données
 $dbname = "utilisateur"; // Nom de la base de données
 $username = "root"; // Nom d'utilisateur de la base de données
 $password = ""; // Mot de passe de la base de données
-
+$messageerreur="";
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     // Configuration pour afficher les erreurs de requête
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute(["username" => $username]);
     $existingUser = $stmt->fetch();
 
-    $messageerreur="";
+   
     if ($existingUser) {
       $messageerreur='Nom d\'utilisateur déja enregistré';
     } else {
@@ -134,8 +134,9 @@ input[type=submit]:hover,
     <input type="submit" id='submit' name='register' value="S'inscrire" >
   
     <button class="btn" type="button" onclick="window.location.href='login.php'">Se connecter</button>
+    <button class="btn" type="button" onclick="window.location.href='Accueil.html'">Revenir à l'accueil</button>
     <span class="erreur">
-    <?=$messageerreur  ?>
+    <?=$messageerreur ?>
 </span>
 </form>
 
