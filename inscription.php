@@ -24,8 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute(["username" => $username]);
     $existingUser = $stmt->fetch();
 
+    $messageerreur="";
     if ($existingUser) {
-        $error = "Le nom d'utilisateur existe déjà.";
+      $messageerreur='Nom d\'utilisateur déja enregistré';
     } else {
         // Enregistrement du nouvel utilisateur dans la base de données
         $stmt = $pdo->prepare("INSERT INTO utilisateur (nom_utilisateur, mot_de_passe) VALUES (:username, :password)");
@@ -110,6 +111,9 @@ input[type=submit]:hover,
   cursor: pointer;
   width: 100%;
 }
+.erreur{
+ color: red;      
+}
 
 
 
@@ -126,16 +130,14 @@ input[type=submit]:hover,
 
     <label><b>Mot de passe</b></label>
     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-
+    
     <input type="submit" id='submit' name='register' value="S'inscrire" >
-    <button class="btn" type="button" onclick="window.location.href='login.php'">Se connecter</button>
-</form>
-<script>
- 
-    
-    
   
-</script>
+    <button class="btn" type="button" onclick="window.location.href='login.php'">Se connecter</button>
+    <span class="erreur">
+    <?=$messageerreur  ?>
+</span>
+</form>
 
 </body>
 </html>

@@ -97,12 +97,7 @@ input[type=submit]:hover {
     
  </form>
  </div>
-<script>
-        window.addEventListener("DOMContentLoaded", function() {
-      document.background.addEventListener("click", function() {
-        window.location.href = "Accueil.html";
-      });
-    });
+
 </script>
  </body>
 </html>
