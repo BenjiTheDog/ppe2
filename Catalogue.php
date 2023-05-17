@@ -26,7 +26,7 @@
                 $condition .= " AND vehicule.Prix = '" . $_POST["prix"] . "'";
             }
             if ($_POST["etat"] != "Par défaut") {
-                $condition .= " AND etat.Libelle = '" . utf8_encode($_POST["etat"]) . "'";
+                $condition .= " AND etat.Libelle = '" . $_POST["etat"] . "'";
             }
             if ($_POST["carburant"] != "Par défaut") {
                 $condition .= " AND carburant.Libelle = '" . $_POST["carburant"] . "'";
