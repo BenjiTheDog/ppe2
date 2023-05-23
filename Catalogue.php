@@ -23,7 +23,7 @@
                 $condition .= " AND vehicule.Chevaux = '" . $_POST["chevaux"] . "'";
             }
             if ($_POST["prix"] != "Par défaut") {
-                $condition .= " AND vehicule.PrixP = '" . $_POST["prix"] . "'";
+                $condition .= " AND vehicule.Prix = '" . $_POST["prix"] . "'";
             }
             if ($_POST["etat"] != "Par défaut") {
                 $condition .= " AND etat.Libelle = '" . $_POST["etat"] . "'";
@@ -47,32 +47,34 @@
          INNER JOIN etat on etat.id = vehicule.id_Etat 
          INNER JOIN marque on marque.id = vehicule.id_Marque 
          INNER JOIN typevehicule on typevehicule.id = vehicule.id_TypeVehicule 
-         WHERE marque.id > 0 $condition "; //Préparation de la requête par PDO
+         WHERE marque.id > 0 $condition ";
+         //Préparation de la requête par PDO
+         echo $sqlQuery;
         $statment = $mysqlConnection->prepare($sqlQuery);
         //Exécution sur le serveur de BDD
         $statment->execute();
         $vehicules = $statment->fetchAll();
-        $sqlQuery = "SELECT Modele FROM vehicule ORDER BY Modele ASC";
+        $sqlQuery = "SELECT DISTINCT Modele FROM vehicule ORDER BY Modele ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $modeles = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM marque ORDER BY Libelle ASC";
+        $sqlQuery = "SELECT DISTINCT Libelle FROM marque ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $marques = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM etat ORDER BY Libelle ASC";
+        $sqlQuery = "SELECT DISTINCT Libelle FROM etat ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $etats = $statment->fetchAll();
-        $sqlQuery = "SELECT Libelle FROM carburant ORDER BY Libelle ASC";
+        $sqlQuery = "SELECT DISTINCT Libelle FROM carburant ORDER BY Libelle ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $carburants = $statment->fetchAll();
-        $sqlQuery = "SELECT Chevaux FROM vehicule ORDER BY Chevaux ASC";
+        $sqlQuery = "SELECT DISTINCT Chevaux FROM vehicule ORDER BY Chevaux ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $chevaux = $statment->fetchAll();
-        $sqlQuery = "SELECT Prix FROM vehicule ORDER BY prix ASC";
+        $sqlQuery = "SELECT DISTINCT Prix FROM vehicule ORDER BY prix ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $prix = $statment->fetchAll();
@@ -80,7 +82,7 @@
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $kilometrages = $statment->fetchAll();
-        $sqlQuery = "SELECT Annee FROM vehicule ORDER BY Annee ASC";
+        $sqlQuery = "SELECT DISTINCT Annee FROM vehicule ORDER BY Annee ASC";
         $statment = $mysqlConnection->prepare($sqlQuery);
         $statment->execute();
         $annees = $statment->fetchAll();
