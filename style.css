@@ -2,7 +2,7 @@ body{
     background-color: #000000;
 }
 body::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 header{
@@ -43,34 +43,34 @@ p{
         font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 p::selection {
-    background: #bf8b42;
+    background: blue;
   }
 h1{
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 h1::selection {
-    background: #bf8b42;
+    background: blue;
   }
 h2{
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 h2::selection {
-    background: #bf8b42;
+    background: blue;
   }
 h3{
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 h3::selection {
-    background: #bf8b42;
+    background: blue;
   }
 h4{
     color:white
 }
 h4::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 .popup {
@@ -86,7 +86,7 @@ h4::selection {
     color: gray;
 }
 .popup::selection {
-    background: #bf8b42;
+    background: blue;
   }
 button {
     background-color: #575757;
@@ -98,10 +98,10 @@ button {
     width: 300px;
 }
 button::selection {
-    background: #bf8b42;
+    background: blue;
   }
 .orange{
-    color: orange;
+    color: blue;
 }
 .imgpub{
     margin-left: 27%;
@@ -109,7 +109,7 @@ button::selection {
     height : 45%;
 }
 .imgpub::selection {
-    background: #bf8b42;
+    background: blue;
   }
 .imggarage{
     margin-top: -1%;
@@ -117,7 +117,7 @@ button::selection {
     height : 50%;
 }
 .imggarage::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 .link{
@@ -125,7 +125,7 @@ button::selection {
         color: white; /*par exemple*/
 }
 link::selection {
-    background: #bf8b42;
+    background: blue;
   }
 .txtroy{
     margin: -42% auto;
@@ -158,7 +158,7 @@ input{
     color:rgb(122, 122, 122);
 }
 input::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 ul{
@@ -168,7 +168,7 @@ ul{
     width:150px;
 }
 ul::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 li{
@@ -177,7 +177,7 @@ li{
     margin:5px;
 }
 li::selection {
-    background: #bf8b42;
+    background: blue;
   }
 li:hover{
     background-color: cornflowerblue    ;
@@ -188,7 +188,7 @@ a{
     text-decoration: none;
 }
 a::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 li a:link, li a:visited {
@@ -213,7 +213,7 @@ table{
     color: white;
 }
 table::selection {
-    background: #bf8b42;
+    background: blue;
   }
 
 #employes{
@@ -265,7 +265,7 @@ table::selection {
   margin-right: 41%;
 }
 .formulaire {
-    background: #bf8b42;
+    background: blue;
     color: #fff;
     border-style: double; 
 }
@@ -283,5 +283,5 @@ tr:not(:last-child) {
 }
 .olink{
   text-decoration: none;
-  color: #bf8b42;
+  color: blue;
 }

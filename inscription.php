@@ -86,7 +86,7 @@ input[type=password] {
 }
 
 input[type=submit] {
-  background-color: orange;
+  background-color: blue;
   color: #403E3E;
   padding: 14px 20px;
   margin: 8px 0;
@@ -98,12 +98,12 @@ input[type=submit] {
 input[type=submit]:hover,
 .btn:hover {
   background-color: #403E3E;
-  color: orange;
-  border: 1px solid orange;
+  color: blue;
+  border: 1px solid blue;
 }
 
 .btn {
-  background-color: orange;
+  background-color: blue;
   color: #403E3E;
   padding: 14px 20px;
   margin: 8px 0;
