@@ -40,7 +40,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 input[type=submit] {
- background-color: blue;
+ background-color: DodgerBlue;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -50,11 +50,11 @@ input[type=submit] {
 }
 input[type=submit]:hover {
  background-color: #403E3E;
- color: blue;
- border: 1px solid blue;
+ color: DodgerBlue;
+ border: 1px solid DodgerBlue;
 }
 .btn{
- background-color: blue;
+ background-color: DodgerBlue;
  color: white;
  padding: 14px 20px;
  margin: 8px 0;
@@ -65,8 +65,8 @@ input[type=submit]:hover {
 }
 .btn:hover{
     background-color: #403E3E;
- color: blue;
- border: 1px solid blue;
+ color: DodgerBlue;
+ border: 1px solid DodgerBlue;
 }
 </style>
  </head>
