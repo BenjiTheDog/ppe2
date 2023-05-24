@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 05 avr. 2023 à 09:10
+-- Généré le : mer. 24 mai 2023 à 06:02
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -207,24 +207,28 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
   KEY `Vehicule_Marque1_FK` (`id_Marque`),
   KEY `Vehicule_TypeVehicule2_FK` (`id_TypeVehicule`),
   KEY `Vehicule_Etat3_FK` (`id_Etat`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Déchargement des données de la table `vehicule`
 --
 
 INSERT INTO `vehicule` (`id`, `Modele`, `Kilometrage`, `Chevaux`, `Annee`, `Prix`, `Image`, `PrixP`, `Id_Carburant`, `id_Marque`, `id_TypeVehicule`, `id_Etat`) VALUES
-(1, 'Cocinelle Homarus', 113500, 110, 2008, 9370, "/IMG/Homarus.JPG", 8560, 2, 5, 1, 2),
-(2, 'Clio 2', 232560, 130, 2002, 1250,"/IMG/Clio2.jpg", 1050, 5, 4, 1, 2),
-(3, 'BMW McQueen', 18500, 380, 2018, 32500,"/IMG/BMW McQueen.jpg", 29800, 2, 1, 1, 2),
-(4, 'Clio 4 RS', 0, 200, 2016, 26000,"/IMG/Clio4RS.jpg", 23250, 2, 4, 5, 1),
-(5, 'Golf 8', 0, 116, 2023, 32870,"/IMG/Golf 8.jpeg", 30000, 4, 5, 1, 1),
-(6, 'Alpine A110', 28127, 175, 1975, 79000,"/IMG/AlpinaA110.jpg", 72500, 2, 11, 5, 2),
-(7, 'Lotus Emira', 35200, 364, 2021, 82470,"/IMG/LotusEmira.webp", 78520, 2, 36, 5, 2),
-(8, 'Renault RS01', 44120, 600, 2015, 259000,"/IMG/RenaultRS01.jpg", 239000, 2, 4, 5, 2),
-(9, 'Tesla Model X', 350000, 772, 2018, 39500,"/IMG/ModelX.jpg", 35800, 3, 18, 4, 3),
-(10, 'Peugeot 205 GTI', 72000, 130, 1988, 45000,"/IMG/Peugeot205.jpg", 42540, 2, 2, 1, 2),
-(11, 'BMW I8', 24852, 362, 2014, 103307,"/IMG/BMWI8.jpg", 99432, 2, 1, 5, 2);
+(1, 'Cocinelle Homarus', 113500, 110, 2008, 9370, 0x2f494d472f486f6d617275732e4a5047, 8560, 2, 5, 1, 2),
+(2, 'Clio 2', 232560, 130, 2002, 1250, 0x2f494d472f436c696f322e6a7067, 1050, 5, 4, 1, 2),
+(3, 'BMW McQueen', 18500, 380, 2018, 32500, 0x2f494d472f424d57204d63517565656e2e6a7067, 29800, 2, 1, 1, 2),
+(4, 'Clio 4 RS', 0, 200, 2016, 26000, 0x2f494d472f436c696f3452532e6a7067, 23250, 2, 4, 5, 1),
+(5, 'Golf 8', 0, 116, 2023, 32870, 0x2f494d472f476f6c6620382e6a706567, 30000, 4, 5, 1, 1),
+(6, 'Alpine A110', 28127, 175, 1975, 79000, 0x2f494d472f416c70696e61413131302e6a7067, 72500, 2, 11, 5, 2),
+(7, 'Lotus Emira', 35200, 364, 2021, 82470, 0x2f494d472f4c6f747573456d6972612e77656270, 78520, 2, 36, 5, 2),
+(8, 'Renault RS01', 44120, 600, 2015, 259000, 0x2f494d472f52656e61756c74525330312e6a7067, 239000, 2, 4, 5, 2),
+(9, 'Tesla Model X', 350000, 772, 2018, 39500, 0x2f494d472f4d6f64656c582e6a7067, 35800, 3, 18, 4, 3),
+(10, 'Peugeot 205 GTI', 72000, 130, 1988, 45000, 0x2f494d472f50657567656f743230352e6a7067, 42540, 2, 2, 1, 2),
+(11, 'BMW I8', 24852, 362, 2014, 103307, 0x2f494d472f424d5749382e6a7067, 99432, 2, 1, 5, 2),
+(12, 'Bezbenzz', 152333, 110, 1998, 3200, 0x2f494d472f4d6572636564657342656e7a2e4a504547, 3000, 4, 8, 1, 2),
+(13, 'Civic TypeR', 132000, 160, 2000, 19800, 0x2f494d472f436976696354797065522e6a7067, 19200, 2, 25, 5, 2),
+(14, 'Twingo RS', 85000, 150, 1990, 11990, 0x2f494d472f5477696e676f52532e706e67, 11200, 2, 4, 1, 2),
+(15, 'Qashqai', 118138, 110, 2017, 14490, 0x2f494d472f516173687161692e4a504547, 13690, 4, 24, 4, 2);
 
 --
 -- Contraintes pour les tables déchargées
